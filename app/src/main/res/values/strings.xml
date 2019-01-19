@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Scouting 2019</string>
+
+    <string name="sendData">Send Data</string>
+    <string name="submitInitials">Submit</string>
+
+    <string name="mainAuthor">Developed by FRC Team 107</string>
+
+
+
+    <!-- Send Data Strings-->
+
+    <string name="concatenateMatch">Concatenate Match</string>
+    <string name="concatenatePit">Concatenate Pit</string>
+    <string name="concatFolder">Enter concatenation folder name</string>
+    <string name="concatFolderEditTextValue">Scouting</string>
+    <string name="concatenateDataText">concatenateData</string>
+    <string name="sendRobotPhotosText">Send Robot Photos</string>
+    <string name="sendPitData">Send Pit Data</string>
+    <string name="sendMatchData">Send Match Data</string>
+
+
+    <!--Auton Strings-->
+    <string name="teamNumberHeading">Team Number</string>
+    <string name="matchNumberHeading">Match Number</string>
+    <string name="startingLocationHeading">Starting Location</string>
+
+    <string name="leftStarting">Left</string>
+    <string name="centerStarting">Center</string>
+    <string name="rightStarting">Right</string>
+    <string name="farRightStarting">Far Right</string>
+
+    <string name="baselineCrossHeading">Baseline</string>
+    <string name="successBaseline">Success</string>
+    <string name="failBaseline">Fail</string>
+    <string name="notAttemptedBaseline">N/A</string>
+
+    <string name="cubeInSwitchHeading">Cube in Switch</string>
+    <string name="successSwitch">Success</string>
+    <string name="failSwitch">Fail</string>
+    <string name="notAttemptedSwitch">N/A</string>
+    <string name="wrongSideSwitch">Wrong Side</string>
+
+    <string name="cubeInScaleHeading">Cube in Scale</string>
+    <string name="successScale">Success</string>
+    <string name="failScale">Fail</string>
+    <string name="notAttemptedScale">N/A</string>
+    <string name="wrongSideScale">Wrong Side</string>
+
+    <string name="saveButton">Save</string>
+
+
+    <!--Auton Error Strings-->
+
+    <string name="teamNumberError">Enter in team number</string>
+    <string name="matchNumberError">Enter in match number</string>
+    <string name="startingLocationError">Enter starting location</string>
+
+    <!--Teleop Strings-->
+    <string name="cubesInExchange"># of cubes in exchange</string>
+    <string name="cubesInOurSwitch"># of cubes in their switch</string>
+    <string name="cubesInTheirSwitch"># of cubes in opponent switch</string>
+    <string name="cubesInScale"># of cubes in scale</string>
+
+    <string name="cubePickupHeading">Cube pickup</string>
+    <string name="cubePickupFloor">Floor</string>
+    <string name="cubePickupPortal">Portal</string>
+
+    <string name="climbingHeading">Climb</string>
+    <string name="successClimb">Success</string>
+    <string name="failClimb">Fail</string>
+    <string name="noClimb">N/A</string>
+
+    <string name="climbTimeHeading">Climb Time</string>
+
+    <string name="abilityToHelpClimbHeading">Can help others climb</string>
+    <string name="ableToHelpClimb">Yes</string>
+    <string name="unableToHelpClimb">No</string>
+
+    <string name="onPlatformHeading">On platform</string>
+    <string name="isOnPlatform">Success</string>
+    <string name="isNotOnPlatform">Fail</string>
+    <string name="notAttemptedPlatform">N/A</string>
+
+    <string name="defenseHeading">Defense</string>
+    <string name="effectiveDefense">Effective</string>
+    <string name="ineffectiveDefense">Ineffective</string>
+    <string name="receivedFoulsDefense">Fouled</string>
+    <string name="noDefense">N/A</string>
+
+    <string name="fouls">Fouls</string>
+    <string name="nextButton">Move To Teleop</string>
+
+    <string name="scouterInitials">Scouter Initials</string>
+
+
+    <!--Teleop Error Strings-->
+    <string name="teleopCubesInExchangeError">Enter # of cubes in exchange</string>
+    <string name="cubesInOurSwitchError">Enter # of cubes in their switch</string>
+    <string name="cubesInTheirSwitchError">Enter # of cubes in opponent switch</string>
+    <string name="cubesInScaleError">Enter # of cubes in scale</string>
+    <string name="scouterInitialsError">Enter scouter initials</string>
+
+
+    <!--Menu Strings-->
+    <string name="matchScouting">Match</string>
+    <string name="pitScouting">Pit</string>
+
+    <!--Pit Scouting Strings-->
+    <string name="pitTeamNumberHeading">Team Number</string>
+    <string name="pitStartingPositionHeading">Starting Position</string>
+    <string name="pitStartingPositionRight">Right</string>
+    <string name="pitStartingPositionLeft">Left</string>
+    <string name="pitStartingPositionMiddle">Middle</string>
+    <string name="pitStartingPositionAll">All</string>
+
+    <string name="pitDefenseType">Defense Type</string>
+    <string name="pitDefenseBlock">Block</string>
+    <string name="pitDefenseSwitch">Switch</string>
+    <string name="pitDefenseNo">None</string>
+
+    <string name="pitCubeNumberInSwitch">Avg # of cubes in switch</string>
+    <string name="pitCubeNumberInScale">Avg # of cubes in scale</string>
+    <string name="pitCubeNumberInExchange">Avg # of cubes in exchange</string>
+
+    <string name="pitPickupBoolean">Pick up off the floor?</string>
+    <string name="pitPickupYes">Yes</string>
+    <string name="pitPickupNo">No</string>
+
+    <string name="pitVaultPriority">Vault Priority</string>
+    <string name="pitClimbBoolean">Climb?</string>
+    <string name="pitClimbYes">Yes</string>
+    <string name="pitClimbNo">No</string>
+    <string name="pitClimbHelp">Can you help alliance robots climb?</string>
+    <string name="pitClimbHelp1">1</string>
+    <string name="pitClimbHelp2">2</string>
+    <string name="pitClimbHelpNo">No</string>
+
+    <string name="pitRobotComment">Extra Comments</string>
+
+    <string name="pitTeleopPreference">Teleop Preference</string>
+    <string name="pitTeleopScale">Scale</string>
+    <string name="pitTeleopSwitch">Switch</string>
+    <string name="pitProgrammingLanguage">Programming Language</string>
+    <string name="pitDriveTrain">Drive Train</string>
+    <string name="pitOtherLabel">Other:</string>
+
+
+
+    <!-- Team Numbers drop down array -->
+    <string-array name="teamNumbers">
+        <item>Select Team Number</item>
+        <item> 503</item>
+        <item>830</item>
+        <item>1677</item>
+        <item>1918</item>
+        <item>2054</item>
+        <item>3658</item>
+        <item>4327</item>
+        <item>4381</item>
+        <item>4408</item>
+        <item>4453</item>
+        <item>4482</item>
+        <item>4568</item>
+        <item>5205</item>
+        <item>5227</item>
+        <item>5256</item>
+        <item>5501</item>
+        <item>5559</item>
+        <item>5674</item>
+        <item>5676</item>
+        <item>5685</item>
+        <item>5708</item>
+        <item>5710</item>
+        <item>5926</item>
+        <item>6002</item>
+        <item>6053</item>
+        <item>6092</item>
+        <item>6102</item>
+        <item>6137</item>
+        <item>6138</item>
+        <item>6425</item>
+        <item>6556</item>
+        <item>6580</item>
+        <item>7144</item>
+        <item>7203</item>
+        <item>7209</item>
+        <item>7219</item>
+        <item>7223</item>
+        <item>7794</item>
+        <item>7811</item>
+        <item>7911</item>
+    </string-array>
+
+
+    <!-- Programming drop down array -->
+    <string-array name="programmingLanguages">
+        <item>LabView</item>
+        <item>C++</item>
+        <item>Java</item>
+        <item>Python</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Drive Train drop down array -->
+    <string-array name="driveTrain">
+        <item> Tank</item>
+        <item>Mechanum</item>
+        <item>Swerve</item>
+        <item>Arcade</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Hab Platform drop down array -->
+    <string-array name="habPlatform">
+        <item> Lowest deck</item>
+        <item>middle deck</item>
+        <item>highest deck</item>
+    </string-array>
+
+
+
+    <string name="pitJava">Java</string>
+    <string name="pitCpp">C++</string>
+    <string name="pitLabview">LabVIEW</string>
+    <string name="pitOther">Other</string>
+    <string name="pitRobotWeightTextView">How much does your robot weigh?</string>
+    <string name="pitRobotArcadeGame">What old arcade game would your robot be in?</string>
+    <string name="savePitButton">Save</string>
+
+    <string name="takePhotoButton">Take Photo</string>
+
+    <!--Pit Error Strings-->
+    <string name="pitTeamNumberError">Select a team number</string>
+    <string name="pitCubeNumberInSwitchError">Enter average cube number in switch</string>
+    <string name="pitCubeNumberInScaleError">Enter average cube number in scale</string>
+    <string name="pitCubeNumberInExchangeError">Enter average cube number in exchange</string>
+    <string name="pitVaultPriorityError">Enter vault priority</string>
+    <string name="pitProgrammingLanguageError">Enter Programming Language</string>
+    <string name="pitArcadeGameError">Enter arcade game</string>
+    <string name="robotNameError">Enter Robot Name</string>
+
+</resources>
