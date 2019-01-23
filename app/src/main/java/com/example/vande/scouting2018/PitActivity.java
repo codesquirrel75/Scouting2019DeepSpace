@@ -81,11 +81,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     @BindView(R.id.pit_prematch_radio_group)
     public  RadioGroup pitPrematchRadioGroup;
 
-    public String pit15String;
+    public String pit15String = "";
 
-    public String pitHatchString;
+    public String pitHatchString = "";
 
-    public  String pitCargoString;
+    public  String pitCargoString = "";
 
     @BindView(R.id.pit_endgame)
     public Spinner pitEndgame;
@@ -210,10 +210,10 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_15_auton:
                 s1 = " Autonomous |";
                 if(checked){
-                    if(pit15String > "") {
-                        pit15String = pit15String + s1;
-                    }else{
+                    if(pit15String.isEmpty()) {
                         pit15String = s1;
+                    }else{
+                        pit15String = pit15String + s1;
                     }
                 }else{
                     if(pit15String.contains(s1)){
@@ -226,12 +226,12 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_15_manual:
                 s1 = "Manual |";
                 if(checked){
-                    if(pit15String > "") {
-                        pit15String = pit15String + s1;
-                    }else{
+                    if(pit15String.isEmpty()) {
                         pit15String = s1;
+                    }else{
+                        pit15String = pit15String + s1;
                     }
-                    pit15String = pit15String + s1;
+
                 }else{
                     if(pit15String.contains(s1)){
                         int start = pit15String.indexOf(s1);
@@ -243,7 +243,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_15_nothing:
                 s1 = "Nothing |";
                 if(checked){
-                    pit15String = pit15String + s1;
+                    if(pit15String.isEmpty()) {
+                        pit15String = s1;
+                    }else{
+                        pit15String = pit15String + s1;
+                    }
                 }else{
                     if(pit15String.contains(s1)){
                         int start = pit15String.indexOf(s1);
@@ -255,7 +259,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_hatch_cargo:
                 s1 = "Cargo |";
                 if(checked){
-                    pitHatchString = pitHatchString + s1;
+                    if(pitHatchString.isEmpty()) {
+                        pitHatchString = s1;
+                    }else{
+                        pitHatchString = pitHatchString + s1;
+                    }
                 }else{
                     if(pitHatchString.contains(s1)){
                         int start = pitHatchString.indexOf(s1);
@@ -267,7 +275,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_hatch_bottom:
                 s1 = "Bottom |";
                 if(checked){
-                    pitHatchString = pitHatchString + s1;
+                    if(pitHatchString.isEmpty()) {
+                        pitHatchString = s1;
+                    }else{
+                        pitHatchString = pitHatchString + s1;
+                    }
                 }else{
                     if(pitHatchString.contains(s1)){
                         int start = pitHatchString.indexOf(s1);
@@ -279,7 +291,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_hatch_middle:
                 s1 = "Middle |";
                 if(checked){
-                    pitHatchString = pitHatchString + s1;
+                    if(pitHatchString.isEmpty()) {
+                        pitHatchString = s1;
+                    }else{
+                        pitHatchString = pitHatchString + s1;
+                    }
                 }else{
                     if(pitHatchString.contains(s1)){
                         int start = pitHatchString.indexOf(s1);
@@ -291,7 +307,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_hatch_top:
                 s1 = "Top |";
                 if(checked){
-                    pitHatchString = pitHatchString + s1;
+                    if(pitHatchString.isEmpty()) {
+                        pitHatchString = s1;
+                    }else{
+                        pitHatchString = pitHatchString + s1;
+                    }
                 }else{
                     if(pitHatchString.contains(s1)){
                         int start = pitHatchString.indexOf(s1);
@@ -303,7 +323,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_hatch_na:
                 s1 = "N/A |";
                 if(checked){
-                    pitHatchString = pitHatchString + s1;
+                    if(pitHatchString.isEmpty()) {
+                        pitHatchString = s1;
+                    }else{
+                        pitHatchString = pitHatchString + s1;
+                    }
                 }else{
                     if(pitHatchString.contains(s1)){
                         int start = pitHatchString.indexOf(s1);
@@ -315,7 +339,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_cargo_cargo:
                 s1 = "Cargo |";
                 if(checked){
-                    pitCargoString = pitCargoString + s1;
+                    if(pitCargoString.isEmpty()) {
+                        pitCargoString = s1;
+                    }else{
+                        pitCargoString = pitCargoString + s1;
+                    }
                 }else{
                     if(pitCargoString.contains(s1)){
                         int start = pitCargoString.indexOf(s1);
@@ -327,7 +355,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_cargo_bottom:
                 s1 = "Bottom |";
                 if(checked){
-                    pitCargoString = pitCargoString + s1;
+                    if(pitCargoString.isEmpty()) {
+                        pitCargoString = s1;
+                    }else{
+                        pitCargoString = pitCargoString + s1;
+                    }
                 }else{
                     if(pitCargoString.contains(s1)){
                         int start = pitCargoString.indexOf(s1);
@@ -339,7 +371,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_cargo_middle:
                 s1 = "Middle |";
                 if(checked){
-                    pitCargoString = pitCargoString + s1;
+                    if(pitCargoString.isEmpty()) {
+                        pitCargoString = s1;
+                    }else{
+                        pitCargoString = pitCargoString + s1;
+                    }
                 }else{
                     if(pitCargoString.contains(s1)){
                         int start = pitCargoString.indexOf(s1);
@@ -351,7 +387,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_cargo_top:
                 s1 = "Top |";
                 if(checked){
-                    pitCargoString = pitCargoString + s1;
+                    if(pitCargoString.isEmpty()) {
+                        pitCargoString = s1;
+                    }else{
+                        pitCargoString = pitCargoString + s1;
+                    }
                 }else{
                     if(pitCargoString.contains(s1)){
                         int start = pitCargoString.indexOf(s1);
@@ -363,7 +403,11 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             case R.id.pit_cargo_na:
                 s1 = "N/A |";
                 if(checked){
-                    pitCargoString = pitCargoString + s1;
+                    if(pitCargoString.isEmpty()) {
+                        pitCargoString = s1;
+                    }else{
+                        pitCargoString = pitCargoString + s1;
+                    }
                 }else{
                     if(pitCargoString.contains(s1)){
                         int start = pitCargoString.indexOf(s1);
