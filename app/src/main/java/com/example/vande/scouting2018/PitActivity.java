@@ -550,20 +550,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         } else if (StringUtils.isEmptyOrNull(scouterInitialsInput.getText().toString())) {
             scouterInitialsInput.setError(getText(R.string.scouterInitialsError));
             ViewUtils.requestFocus(scouterInitialsInput, this);
-
-        }/* else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(pitCubeNumberInExchangeInputLayout))) {
-            pitCubeNumberInExchangeInputLayout.setError(getText(R.string.pitCubeNumberInExchangeError));
-            ViewUtils.requestFocus(pitCubeNumberInExchangeInputLayout, this);
-        } else if (pitTeleopPreferenceRadiobtnGrp.getCheckedRadioButtonId() == -1) {
-            ViewUtils.requestFocus(pitTeleopPreferenceRadiobtnGrp, this);
-        } else if (pitClimbBooleanRadiobtnGrp.getCheckedRadioButtonId() == -1) {
-            ViewUtils.requestFocus(pitClimbBooleanRadiobtnGrp, this);
-        } else if (pitCanHelpClimbRadioGrp.getCheckedRadioButtonId() == -1) {
-            ViewUtils.requestFocus(pitCanHelpClimbRadioGrp, this);
-        } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(pitArcadeGameInputLayout))) {
-            pitArcadeGameInputLayout.setError(getText(R.string.pitArcadeGameError));
-            ViewUtils.requestFocus(pitArcadeGameInputLayout, this);
-        }*/ else {
+        } else {
             allInputsPassed = true;
         }
         if (!allInputsPassed) {
@@ -572,12 +559,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
       final RadioButton pitPreLoadRadiobtn = findViewById(pitGamePiecePreLoaded.getCheckedRadioButtonId());
       final RadioButton pitPrematchRadiobtn = findViewById(pitPrematchRadioGroup.getCheckedRadioButtonId());
-/*
-        final RadioButton pitTeleopPreference_Radiobtn = findViewById(pitTeleopPreferenceRadiobtnGrp.getCheckedRadioButtonId());
-        final RadioButton pitClimbBoolean_Radiobtn = findViewById(pitClimbBooleanRadiobtnGrp.getCheckedRadioButtonId());
-        final RadioButton pitCanHelpClimb_Radiobtn = findViewById(pitCanHelpClimbRadioGrp.getCheckedRadioButtonId());
-//        final RadioButton pitProgrammingLanguage_Radiobtn = findViewById(pitProgrammingLanguageRadiobtnGrp.getCheckedRadioButtonId());
-*/
+
         if(PermissionUtils.getPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             if (Environment.MEDIA_MOUNTED.equals(state)) {
                 File dir = new File(Environment.getExternalStorageDirectory() + "/Scouting");
@@ -598,15 +580,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
                 pitDataStringList.add(pitOtherInputLayout.getText().toString());
                 pitDataStringList.add(scouterInitialsInput.getText().toString());
 
-      /*          pitDataStringList.add(getTextInputLayoutString(pitCubeNumberInScaleInputLayout));
-                pitDataStringList.add(getTextInputLayoutString(pitCubeNumberInExchangeInputLayout));
-                pitDataStringList.add(pitClimbBoolean_Radiobtn.getText());
-                pitDataStringList.add(pitCanHelpClimb_Radiobtn.getText());
 
-//              pitDataStringList.add(pitProgrammingLanguage_Radiobtn.getText());
-                pitDataStringList.add(getTextInputLayoutString(pitArcadeGameInputLayout));
-                pitDataStringList.add(getTextInputLayoutString(pitCommentInputLayout));
-*/
 
                 String message = FormatStringUtils.addDelimiter(pitDataStringList, ",") + "\n";
 
@@ -632,37 +606,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
         pitDataStringList.clear();
 
-        pitTeamNumberInputLayout.setSelection(0);
-        pitRobotWeight.setText(null);
-        pitDriveTrainInputLayout.setSelection(0);
-        pitProgrammingLanguages.setSelection(0);
-        pitStartingHabPositionSpinner.setSelection(0);
-        pitGamePiecePreLoaded.check(R.id.piece_nothing);
-        pitOtherInputLayout.setText(null);
-        pitEndgame.setSelection(0);
-        scouterInitialsInput.setText(null);
-        pit15Auton.setChecked(false);
-        pit15Manual.setChecked(false);
-        pit15Nothing.setChecked(false);
-        pitCargoCargo.setChecked(false);
-        pitCargoTop.setChecked(false);
-        pitCargoMiddle.setChecked(false);
-        pitCargoBottom.setChecked(false);
-        pitCargoNa.setChecked(false);
-        pitHatchCargo.setChecked(false);
-        pitHatchTop.setChecked(false);
-        pitHatchMiddle.setChecked(false);
-        pitHatchBottom.setChecked(false);
-        pitHatchNa.setChecked(false);
 
-
-
-        /*
-        pitCubeNumberInSwitchInputLayout.setError(null);
-        pitCubeNumberInScaleInputLayout.setError(null);
-        pitCubeNumberInExchangeInputLayout.setError(null);
-        pitArcadeGameInputLayout.setError(null);
- */
     }
 
     public void takePhoto(View view) {
@@ -742,29 +686,34 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             selectedTextView.setError("error");
             selectedTextView.setTextColor(Color.RED);
             selectedTextView.setText(error);
-            //spinner.performClick();
+
         }
     }
 
     public void clearData() {
-//        pitTeamNumberInput.setText("");
-/*
-        pitTeleopPreferenceRadiobtnGrp.clearCheck();
-
-        pitCubeNumberInSwitchInput.setText("");
-        pitCubeNumberInScaleInput.setText("");
-        pitCubeNumberInExchangeInput.setText("");
-
-        pitClimbBooleanRadiobtnGrp.clearCheck();
-        pitCanHelpClimbRadioGrp.clearCheck();
-
-//        pitProgrammingLanguageRadiobtnGrp.clearCheck();
-
-        pitArcadeGameInput.setText("");
-
-        pitCommentInput.setText("");
-*/
-return;
+        pitTeamNumberInputLayout.setSelection(0);
+        pitRobotWeight.setText(null);
+        pitDriveTrainInputLayout.setSelection(0);
+        pitProgrammingLanguages.setSelection(0);
+        pitStartingHabPositionSpinner.setSelection(0);
+        pitGamePiecePreLoaded.check(R.id.piece_nothing);
+        pitPrematchRadioGroup.check(R.id.pit_prematch_nothing);
+        pitOtherInputLayout.setText(null);
+        pitEndgame.setSelection(0);
+        scouterInitialsInput.setText(null);
+        pit15Auton.setChecked(false);
+        pit15Manual.setChecked(false);
+        pit15Nothing.setChecked(false);
+        pitCargoCargo.setChecked(false);
+        pitCargoTop.setChecked(false);
+        pitCargoMiddle.setChecked(false);
+        pitCargoBottom.setChecked(false);
+        pitCargoNa.setChecked(false);
+        pitHatchCargo.setChecked(false);
+        pitHatchTop.setChecked(false);
+        pitHatchMiddle.setChecked(false);
+        pitHatchBottom.setChecked(false);
+        pitHatchNa.setChecked(false);
     }
 
     private void checkForPermissions() {
