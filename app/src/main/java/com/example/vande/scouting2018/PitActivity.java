@@ -90,6 +90,46 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     @BindView(R.id.pit_endgame)
     public Spinner pitEndgame;
 
+    @BindView(R.id.pit_15_auton)
+    public CheckBox pit15Auton;
+
+    @BindView(R.id.pit_15_manual)
+    public CheckBox pit15Manual;
+
+    @BindView(R.id.pit_15_nothing)
+    public CheckBox pit15Nothing;
+
+    @BindView(R.id.pit_hatch_cargo)
+    public CheckBox pitHatchCargo;
+
+    @BindView(R.id.pit_hatch_top)
+    public CheckBox pitHatchTop;
+
+    @BindView(R.id.pit_hatch_middle)
+    public CheckBox pitHatchMiddle;
+
+    @BindView(R.id.pit_hatch_bottom)
+    public CheckBox pitHatchBottom;
+
+    @BindView(R.id.pit_hatch_na)
+    public CheckBox pitHatchNa;
+
+    @BindView(R.id.pit_cargo_cargo)
+    public CheckBox pitCargoCargo;
+
+    @BindView(R.id.pit_cargo_top)
+    public CheckBox pitCargoTop;
+
+    @BindView(R.id.pit_cargo_middle)
+    public CheckBox pitCargoMiddle;
+
+    @BindView(R.id.pit_cargo_bottom)
+    public CheckBox pitCargoBottom;
+
+    @BindView(R.id.pit_cargo_na)
+    public CheckBox pitCargoNa;
+
+
 
     @BindView(R.id.scouterInitials_input)
     public EditText scouterInitialsInput;
@@ -431,6 +471,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitProgrammingLanguages.setOnKeyListener(this);
         pitStartingHabPositionSpinner.setOnKeyListener(this);
         pitGamePiecePreLoaded.setOnKeyListener(this);
+        pitEndgame.setOnKeyListener(this);
     }
 
 
@@ -445,13 +486,14 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitProgrammingLanguages.setOnKeyListener(null);
         pitStartingHabPositionSpinner.setOnKeyListener(null);
         pitGamePiecePreLoaded.setOnKeyListener(null);
+        pitEndgame.setOnKeyListener(this);
     }
 
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-        if (keyCode != KeyEvent.KEYCODE_SPACE && keyCode != KeyEvent.KEYCODE_TAB) {
-            TextInputEditText inputEditText = (TextInputEditText) v;
+     /*  if (keyCode != KeyEvent.KEYCODE_SPACE && keyCode != KeyEvent.KEYCODE_TAB) {
+            //TextInputEditText inputEditText = (TextInputEditText) v;
 
             if (inputEditText != null) {
 
@@ -466,17 +508,18 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
                         pitOtherInputLayout.setError(null);
                         break;
 
-                   /* case R.id.pit_cubeNumberInExchange_input:
+                    case R.id.pit_cubeNumberInExchange_input:
                         pitCubeNumberInExchangeInputLayout.setError(null);
                         break;
 
                     case R.id.pit_arcadeGame_input:
                         pitArcadeGameInputLayout.setError(null);
                         break;
-                   */
+
                 }
             }
         }
+    */
         return false;
     }
 
@@ -486,10 +529,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
         //  ******  Check Requiered fields set focus to field if it hasn't been filled out  ******
 
-        //if (StringUtils.isEmptyOrNull(getTextInputLayoutString(pitCubeNumberInScaleInputLayout))) {
-           // pitCubeNumberInScaleInputLayout.setError(getText(R.string.pitCubeNumberInScaleError));
-           // ViewUtils.requestFocus(pitCubeNumberInScaleInputLayout, this);
-       // if (false){
+
         if (pitTeamNumberInputLayout.getSelectedItem().toString().equals("Select Team Number") ) {
            setSpinnerError(pitTeamNumberInputLayout, "Select a Team Number.");
            ViewUtils.requestFocus(pitTeamNumberInputLayout, this);
@@ -530,7 +570,8 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
             return;
         }
 
-      final RadioButton pitPreLoad_Radiobtn = findViewById(pitGamePiecePreLoaded.getCheckedRadioButtonId());
+      final RadioButton pitPreLoadRadiobtn = findViewById(pitGamePiecePreLoaded.getCheckedRadioButtonId());
+      final RadioButton pitPrematchRadiobtn = findViewById(pitPrematchRadioGroup.getCheckedRadioButtonId());
 /*
         final RadioButton pitTeleopPreference_Radiobtn = findViewById(pitTeleopPreferenceRadiobtnGrp.getCheckedRadioButtonId());
         final RadioButton pitClimbBoolean_Radiobtn = findViewById(pitClimbBooleanRadiobtnGrp.getCheckedRadioButtonId());
@@ -548,14 +589,13 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
                 pitDataStringList.add(pitDriveTrainInputLayout.getSelectedItem().toString());
                 pitDataStringList.add(pitProgrammingLanguages.getSelectedItem().toString());
                 pitDataStringList.add(pitStartingHabPositionSpinner.getSelectedItem().toString());
-                pitDataStringList.add(pitPreLoad_Radiobtn.getText().toString());
-                pitDataStringList.add(pitOtherInputLayout.getText().toString());
+                pitDataStringList.add(pitPreLoadRadiobtn.getText().toString());
                 pitDataStringList.add(pit15String);
                 pitDataStringList.add(pitHatchString);
                 pitDataStringList.add(pitCargoString);
                 pitDataStringList.add(pitEndgame.getSelectedItem().toString());
-
-
+                pitDataStringList.add(pitPrematchRadiobtn.getText().toString());
+                pitDataStringList.add(pitOtherInputLayout.getText().toString());
                 pitDataStringList.add(scouterInitialsInput.getText().toString());
 
       /*          pitDataStringList.add(getTextInputLayoutString(pitCubeNumberInScaleInputLayout));
@@ -599,6 +639,24 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitStartingHabPositionSpinner.setSelection(0);
         pitGamePiecePreLoaded.check(R.id.piece_nothing);
         pitOtherInputLayout.setText(null);
+        pitEndgame.setSelection(0);
+        scouterInitialsInput.setText(null);
+        pit15Auton.setChecked(false);
+        pit15Manual.setChecked(false);
+        pit15Nothing.setChecked(false);
+        pitCargoCargo.setChecked(false);
+        pitCargoTop.setChecked(false);
+        pitCargoMiddle.setChecked(false);
+        pitCargoBottom.setChecked(false);
+        pitCargoNa.setChecked(false);
+        pitHatchCargo.setChecked(false);
+        pitHatchTop.setChecked(false);
+        pitHatchMiddle.setChecked(false);
+        pitHatchBottom.setChecked(false);
+        pitHatchNa.setChecked(false);
+
+
+
         /*
         pitCubeNumberInSwitchInputLayout.setError(null);
         pitCubeNumberInScaleInputLayout.setError(null);
