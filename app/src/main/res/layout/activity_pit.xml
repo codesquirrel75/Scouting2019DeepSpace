@@ -3,7 +3,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
        android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:focusableInTouchMode="true">
 
     <ScrollView
         android:id="@+id/ScrollView01"
@@ -17,13 +18,10 @@
           android:layout_height="wrap_content"
           android:orientation="vertical">
 
-            <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal">
+
                 <TextView
                       android:id="@+id/pit_teamNumber_input_layout"
-                      android:layout_width="0dp"
+                      android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:layout_weight="1"
                       android:ems="10"
@@ -32,10 +30,10 @@
                 <Spinner
                       android:id="@+id/pit_team_number_spinner"
                       android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
+                      android:layout_height="30pt"
                     android:layout_weight="1">
                 </Spinner>
-            </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,19 +41,18 @@
                 android:text="@string/pitRobotWeightTextView"/>
 
             <EditText
-                android:id="@+id/robot_"
+                android:id="@+id/pit_robot_weight"
+                android:hint="@string/pitRobotWeightHint"
+                android:autofillHints="Weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"/>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/pit_driveTrain_input_layout"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -64,18 +61,13 @@
                 <Spinner
                     android:id="@+id/pit_drive_train_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="30pt">
 
                 </Spinner>
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
                 <TextView
                     android:id="@+id/pit_programmingLanguage_input_layout"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -84,10 +76,236 @@
                 <Spinner
                     android:id="@+id/pit_programming_language_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="30pt">
 
                 </Spinner>
+
+                <TextView
+                    android:id="@+id/pit_starting_hab_position_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="10pt"
+                    android:text="@string/pitStartingHabPositionText"/>
+                <Spinner
+                    android:id="@+id/pit_starting_hab_position_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="30pt">
+
+                </Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:text="@string/pitPreLoadText"/>
+
+            <RadioGroup
+                android:id="@+id/pit_game_piece_pre_loaded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/piece_nothing">
+                <RadioButton
+                    android:id="@+id/piece_hatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitHatch" />
+                <RadioButton
+                    android:id="@+id/piece_cargo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitCargo"/>
+                <RadioButton
+                    android:id="@+id/piece_nothing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitNothing"/>
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:text="@string/pitfirst15"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/pit_15_auton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pit15auton"
+                    android:onClick="setString"/>
+
+                <CheckBox
+                    android:id="@+id/pit_15_manual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pit15manual"
+                    android:onClick="setString"/>
+
+                <CheckBox
+                    android:id="@+id/pit_15_nothing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pit15nothing"
+                    android:onClick="setString"/>
+
+
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:text="@string/pitHatchPanels"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/pit_hatch_cargo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitCargoShip"
+                    android:onClick="setString"/>
+
+                <CheckBox
+                    android:id="@+id/pit_hatch_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitRocketBottom"
+                    android:onClick="setString"/>
+
+                <CheckBox
+                    android:id="@+id/pit_hatch_middle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitRocketMiddle"
+                    android:onClick="setString"/>
+
+
+                <CheckBox
+                    android:id="@+id/pit_hatch_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitRocketTop"
+                    android:onClick="setString"/>
+
+                <CheckBox
+                    android:id="@+id/pit_hatch_na"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitNA"
+                    android:onClick="setString"/>
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:text="@string/pitCargoPlacement"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/pit_cargo_cargo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitCargoShip"
+                    android:onClick="setString"/>
+
+                <CheckBox
+                    android:id="@+id/pit_cargo_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitRocketBottom"
+                    android:onClick="setString"/>
+
+                <CheckBox
+                    android:id="@+id/pit_cargo_middle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitRocketMiddle"
+                    android:onClick="setString"/>
+
+
+                <CheckBox
+                    android:id="@+id/pit_cargo_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitRocketTop"
+                    android:onClick="setString"/>
+
+                <CheckBox
+                    android:id="@+id/pit_cargo_na"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitNA"
+                    android:onClick="setString"/>
+
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:text="@string/pitEndgame"/>
+
+
+            <Spinner
+                android:id="@+id/pit_endgame"
+                android:layout_width="match_parent"
+                android:layout_height="30pt">
+
+            </Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:text="@string/pitCargoShipText"/>
+
+            <RadioGroup
+                android:id="@+id/pit_prematch_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/pit_prematch_nothing">
+
+                <RadioButton
+                    android:id="@+id/pit_prematch_cargo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitPreMatchCargo"/>
+
+                <RadioButton
+                    android:id="@+id/pit_prematch_hatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitPreMatchHatch"/>
+
+                <RadioButton
+                    android:id="@+id/pit_prematch_nothing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitPreMatchNothing"/>
+
+            </RadioGroup>
 
             <TextView
                 android:layout_width="match_parent"
@@ -96,19 +314,37 @@
                 android:text="@string/pitOtherLabel"/>
             <EditText
                 android:id="@+id/pit_other_input"
+                android:autofillHints="Other"
+                android:hint="@string/pitOtherLabel"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:text="@string/scouterInitials"/>
+            <EditText
+                android:id="@+id/scouterInitials_input"
+                android:autofillHints="Initials"
+                android:hint="@string/scouterInitials"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
             <Button
                 android:id="@+id/take_photo_btn"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30pt"
                 android:onClick="takePhoto"
                 android:text="@string/takePhotoButton" />
 
             <Button
                 android:id="@+id/save_pit_btn"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30pt"
                 android:onClick="savePitData"
                 android:text="@string/savePitButton" />
 
