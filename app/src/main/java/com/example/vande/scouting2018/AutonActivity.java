@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
@@ -15,11 +16,14 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -39,14 +43,12 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     public static final String MATCH_STRING_EXTRA = "match_extra";
     public static final String TEAMNUMBER_STRING_EXTRA = "teamnumber_extra";
 
-    @BindView(R.id.teamNumber_input_layout)
-    public TextInputLayout teamNumberInputLayout;
+
+    @BindView(R.id.team_number_spinner)
+    public Spinner TeamNumberInputLayout;
 
     @BindView(R.id.matchNumber_input_layout)
     public TextInputLayout matchNumberInputLayout;
-
-    @BindView(R.id.teamNumber_input)
-    public EditText teamNumberInput;
 
     @BindView(R.id.matchNumber_input)
     public EditText matchNumberInput;
@@ -83,6 +85,18 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         autonDataStringList = new ArrayList<>();
 
         checkForPermissions();
+
+        //  --- Team Numbers spinner ---
+
+        Spinner teamnumberspinner = (Spinner) findViewById(R.id.team_number_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> teamnumberadapter = ArrayAdapter.createFromResource(this,
+                R.array.teamNumbers, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        teamnumberadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        teamnumberspinner.setAdapter(teamnumberadapter);
+
     }
 
     /*If this activity is resumed from a paused state the data
@@ -94,7 +108,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
         autonDataStringList.clear();
 
-        teamNumberInput.setOnKeyListener(this);
+        TeamNumberInputLayout.setOnKeyListener(this);
         matchNumberInput.setOnKeyListener(this);
         cubeInSwitchRadiobtnGrp.setOnKeyListener(this);
         cubeInScaleRadiobtnGrp.setOnKeyListener(this);
@@ -105,7 +119,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     protected void onPause() {
         super.onPause();
 
-        teamNumberInput.setOnKeyListener(null);
+        TeamNumberInputLayout.setOnKeyListener(null);
         matchNumberInput.setOnKeyListener(null);
         cubeInSwitchRadiobtnGrp.setOnKeyListener(null);
         cubeInScaleRadiobtnGrp.setOnKeyListener(null);
@@ -150,9 +164,6 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
                 switch (inputEditText.getId()) {
 
-                    case R.id.teamNumber_input:
-                        teamNumberInputLayout.setError(null);
-                        break;
 
                     case R.id.matchNumber_input:
                         matchNumberInputLayout.setError(null);
@@ -177,9 +188,9 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     public void onShowTeleop(View view) {
         boolean allInputsPassed = false;
 
-        if (StringUtils.isEmptyOrNull(getTextInputLayoutString(teamNumberInputLayout)) || Integer.valueOf(getTextInputLayoutString(teamNumberInputLayout)) == 0) {
-            teamNumberInputLayout.setError(getText(R.string.teamNumberError));
-            ViewUtils.requestFocus(teamNumberInputLayout, this);
+        if (TeamNumberInputLayout.getSelectedItem().toString().equals("Select Team Number")) {
+            setSpinnerError(TeamNumberInputLayout, "Select a Team Number.");
+            ViewUtils.requestFocus(TeamNumberInputLayout, this);
         } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(matchNumberInputLayout)) || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) == 0) {
             matchNumberInputLayout.setError(getText(R.string.matchNumberError));
             ViewUtils.requestFocus(matchNumberInputLayout, this);
@@ -204,7 +215,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         final RadioButton cubeInSwitch_Radiobtn = findViewById(cubeInSwitchRadiobtnGrp.getCheckedRadioButtonId());
         final RadioButton cubeInScale_Radiobtn = findViewById(cubeInScaleRadiobtnGrp.getCheckedRadioButtonId());
 
-        autonDataStringList.add(getTextInputLayoutString(teamNumberInputLayout));
+        autonDataStringList.add(TeamNumberInputLayout.getSelectedItem().toString());
         autonDataStringList.add(getTextInputLayoutString(matchNumberInputLayout));
         autonDataStringList.add(startingLocation_Radiobtn.getText());
         autonDataStringList.add(baseline_Radiobtn.getText());
@@ -214,11 +225,11 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         final Intent intent = new Intent(this, TeleopActivity.class);
         intent.putExtra(AUTON_STRING_EXTRA, FormatStringUtils.addDelimiter(autonDataStringList, ","));
         intent.putExtra(MATCH_STRING_EXTRA, getTextInputLayoutString(matchNumberInputLayout));
-        intent.putExtra(TEAMNUMBER_STRING_EXTRA, getTextInputLayoutString(teamNumberInputLayout));
+        intent.putExtra(TEAMNUMBER_STRING_EXTRA, TeamNumberInputLayout.getSelectedItem().toString());
 
         startActivityForResult(intent, REQUEST_CODE);
 
-        teamNumberInputLayout.setError(null);
+
         matchNumberInputLayout.setError(null);
 
         matchNumberInput.requestFocus();
@@ -244,12 +255,26 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     /*This method will clear all of the text entry fields as well
     * as reset the checkboxes and reset the radio buttons to their default*/
     public void clearData() {
-        teamNumberInput.setText("");
+        TeamNumberInputLayout.setSelection(0);
         matchNumberInput.setText("");
         startingLocationRadiobtnGrp.clearCheck();
         baseLineRadiobtnGrp.clearCheck();
         cubeInSwitchRadiobtnGrp.clearCheck();
         cubeInScaleRadiobtnGrp.clearCheck();
+    }
+
+
+
+    private void setSpinnerError(Spinner spinner, String error){
+        View selectedView = spinner.getSelectedView();
+        if (selectedView instanceof TextView){
+            spinner.requestFocus();
+            TextView selectedTextView = (TextView) selectedView;
+            selectedTextView.setError("error");
+            selectedTextView.setTextColor(Color.RED);
+            selectedTextView.setText(error);
+
+        }
     }
 
 
