@@ -8,53 +8,366 @@
     android:fillViewport="true"
     android:scrollbars="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12pt"
+            android:text="@string/cargoShipTitle"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/decrease_hatchPanelsOnCargoShip"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseCargoShipHatchPanelInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_hatchPanelsOnCargoShip"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoShipHatchPanelInput"
+                android:text="@string/plus"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/teleop_cargo_ship_hatch_panel_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/hatchPanelsOnCargoShip"
+                app:errorEnabled="true"
+                tools:ignore="UnknownId">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/teleop_cargo_ship_hatch_panel_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/decrease_teleop_cargo_in_cargo_ship"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseCargoInCargoShipInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_cargo_in_cargo_ship"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoInCargoShipInput"
+                android:text="@string/plus"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/teleop_cargo_in_cargo_ship_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/cargoInCargoShip"
+                app:errorEnabled="true"
+                tools:ignore="UnknownId">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/teleop_cargo_in_cargo_ship_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:enabled="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12pt"
+            android:text="@string/rocketShipTitle"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/decrease_teleop_hatch_panel_top"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseHatchPanelTopInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_hatch_panel_top"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseHatchPanelTopInput"
+                android:text="@string/plus"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/teleop_hatch_panel_top_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hatchPanelTop"
+                app:errorEnabled="true"
+                tools:ignore="UnknownId">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/teleop_hatch_panel_top_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:enabled="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/decrease_teleop_hatch_panel_middle"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseHatchPanelMiddleInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_hatch_panel_middle"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseHatchPanelMiddleInput"
+                android:text="@string/plus"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/teleop_hatch_panel_middle_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hatchPanelMiddle"
+                app:errorEnabled="true"
+                tools:ignore="UnknownId">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/teleop_hatch_panel_middle_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:enabled="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/decrease_teleop_hatch_panel_bottom"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseHatchPanelBottomInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_hatch_panel_bottom"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseHatchPanelBottomInput"
+                android:text="@string/plus"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/teleop_hatch_panel_bottom_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hatchPanelBottom"
+                app:errorEnabled="true"
+                tools:ignore="UnknownId">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/teleop_hatch_panel_bottom_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:enabled="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/decrease_teleop_cargo_top"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseCargoTopInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_cargo_top"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoTopInput"
+                android:text="@string/plus"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/teleop_cargo_top_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/cargoTop"
+                app:errorEnabled="true"
+                tools:ignore="UnknownId">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/teleop_cargo_top_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:enabled="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/decrease_teleop_cargo_middle"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseCargoMiddleInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_cargo_middle"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoMiddleInput"
+                android:text="@string/plus"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/teleop_cargo_middle_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/cargoMiddle"
+                app:errorEnabled="true"
+                tools:ignore="UnknownId">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/teleop_cargo_middle_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:enabled="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/decrease_teleop_cargo_bottom"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseCargoBottomInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_cargo_bottom"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoBottomInput"
+                android:text="@string/plus"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/teleop_cargo_bottom_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/cargoBottom"
+                app:errorEnabled="true"
+                tools:ignore="UnknownId">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/teleop_cargo_bottom_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:enabled="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+
+
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="match_parent"
+            android:layout_height="30pt"
+            android:onClick="saveData"
+            android:text="@string/saveButton"/>
+
+    </LinearLayout>
+
+  <!--
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/decrease_teleopCubesInExchange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="decreaseTeleopCubesInExchangeInput"
-            android:text="-"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/teleopCubesInExchange_input_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/cubesInExchange"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toStartOf="@+id/increase_teleopCubesInExchange"
-            app:layout_constraintStart_toEndOf="@id/decrease_teleopCubesInExchange"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="UnknownId">
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/teleopCubesInExchange_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:clickable="false"
-                android:cursorVisible="false"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:enabled="true"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="parent" />
-        </android.support.design.widget.TextInputLayout>
-
-        <Button
-            android:id="@+id/increase_teleopCubesInExchange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="increaseTeleopCubesInExchangeInput"
-            android:text="+"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/teleopCubesInExchange_input_layout" />
 
         <Button
             android:id="@+id/decrease_teleopCubesInOurSwitch"
@@ -390,16 +703,10 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fouls_TextView" />
 
-        <Button
-            android:id="@+id/save_btn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:onClick="saveData"
-            android:text="@string/saveButton"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fouls_chkbx" />
+
     </android.support.constraint.ConstraintLayout>
+-->
+
 </ScrollView>
 
 
