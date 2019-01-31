@@ -1,6 +1,7 @@
 package com.example.vande.scouting2018;
 
 import android.Manifest;
+import android.graphics.Color;
 import android.os.Environment;
 
 import android.provider.Settings;
@@ -14,11 +15,14 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.support.design.widget.TextInputLayout;
 import android.content.Intent;
@@ -91,6 +95,77 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
     @BindView(R.id.teleop_cargo_bottom_input)
     public TextInputEditText teleopCargoBottomInput;
+
+    @BindView(R.id.defense_effectiveness)
+    public RadioGroup defenseEffectiveness;
+
+    @BindView(R.id.end_game_location_spinner)
+    public Spinner endGameLocationSpinner;
+
+    @BindView(R.id.cycle_time_spinner)
+    public Spinner cycleTimeSpinner;
+
+    @BindView(R.id.overall_effectiveness_radio_group)
+    public RadioGroup overallEffectivenessRadioGoup;
+
+    @BindView(R.id.overall_hatch_cargo_placement_radio_group)
+    public RadioGroup overallPlacementRadioGoup;
+
+    @BindView(R.id.trained_drive_team_radio_group)
+    public RadioGroup trainedDriveTeamRadioGoup;
+
+    @BindView(R.id.observ_cargo_pickup)
+    public CheckBox observCargoPickup;
+
+    @BindView(R.id.observ_died_back)
+    public CheckBox observDiedBack;
+
+    @BindView(R.id.observ_died_mid)
+    public CheckBox observDiedMid;
+
+    @BindView(R.id.observ_dns)
+    public CheckBox observDns;
+
+    @BindView(R.id.observ_fast)
+    public CheckBox observFast;
+
+    @BindView(R.id.observ_fell_apart)
+    public CheckBox observFellApart;
+
+    @BindView(R.id.observ_fell_over)
+    public CheckBox observFellOver;
+
+    @BindView(R.id.observ_hatch_pickup)
+    public CheckBox observHatchPickup;
+
+    @BindView(R.id.observ_jerky)
+    public CheckBox observJerky;
+
+    @BindView(R.id.observ_not_much)
+    public CheckBox observNotMuch;
+
+    @BindView(R.id.observ_penalties)
+    public CheckBox observPenalties;
+
+    @BindView(R.id.observ_played_defense)
+    public CheckBox observPlayedDefense;
+
+    @BindView(R.id.observ_slow)
+    public CheckBox observSlow;
+
+    @BindView(R.id.observ_slowed_by_robot)
+    public CheckBox observSlowedByRobot;
+
+    @BindView(R.id.observ_smooth)
+    public CheckBox observsmooth;
+
+    @BindView(R.id.summary_input)
+    public EditText summaryInput;
+
+    @BindView(R.id.issues_input)
+    public EditText issuesInput;
+
+    public String observations = "";
 
 
     //2018 vars
@@ -188,7 +263,28 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         displayTeleopCargoBottomInput(teleopCargoBottom);
 
 
+        //  --- End Game Location spinner ---
 
+        Spinner endgamelocationspinner = (Spinner) findViewById(R.id.end_game_location_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> endgamelocationadapter = ArrayAdapter.createFromResource(this,
+                R.array.endgame_location, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        endgamelocationadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        endgamelocationspinner.setAdapter(endgamelocationadapter);
+
+
+        //  --- Cycle Time spinner ---
+
+        Spinner cycletimespinner = (Spinner) findViewById(R.id.cycle_time_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> cycletimeadapter = ArrayAdapter.createFromResource(this,
+                R.array.cycle_time_spinner, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        cycletimeadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        cycletimespinner.setAdapter(cycletimeadapter);
 
 
 
@@ -212,6 +308,29 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopCargoTopInput.setOnKeyListener(this);
         teleopCargoTopInput.setOnKeyListener(this);
         teleopCargoTopInput.setOnKeyListener(this);
+        defenseEffectiveness.setOnKeyListener(this);
+        endGameLocationSpinner.setOnKeyListener(this);
+        cycleTimeSpinner.setOnKeyListener(this);
+        overallEffectivenessRadioGoup.setOnKeyListener(this);
+        overallPlacementRadioGoup.setOnKeyListener(this);
+        trainedDriveTeamRadioGoup.setOnKeyListener(this);
+        observsmooth.setOnKeyListener(this);
+        observSlowedByRobot.setOnKeyListener(this);
+        observSlow.setOnKeyListener(this);
+        observPlayedDefense.setOnKeyListener(this);
+        observPenalties.setOnKeyListener(this);
+        observNotMuch.setOnKeyListener(this);
+        observJerky.setOnKeyListener(this);
+        observHatchPickup.setOnKeyListener(this);
+        observFellOver.setOnKeyListener(this);
+        observFellApart.setOnKeyListener(this);
+        observFast.setOnKeyListener(this);
+        observDns.setOnKeyListener(this);
+        observDiedMid.setOnKeyListener(this);
+        observDiedBack.setOnKeyListener(this);
+        observCargoPickup.setOnKeyListener(this);
+        summaryInput.setOnKeyListener(this);
+        issuesInput.setOnKeyListener(this);
     /*
         teleopCubesInOurSwitchInput.setOnKeyListener(this);
         teleopCubesInTheirSwitchInput.setOnKeyListener(this);
@@ -232,6 +351,30 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopCargoTopInput.setOnKeyListener(this);
         teleopCargoTopInput.setOnKeyListener(this);
         teleopCargoTopInput.setOnKeyListener(this);
+        defenseEffectiveness.setOnKeyListener(this);
+        endGameLocationSpinner.setOnKeyListener(this);
+        cycleTimeSpinner.setOnKeyListener(this);
+        overallEffectivenessRadioGoup.setOnKeyListener(this);
+        overallPlacementRadioGoup.setOnKeyListener(this);
+        trainedDriveTeamRadioGoup.setOnKeyListener(this);
+        observsmooth.setOnKeyListener(this);
+        observSlowedByRobot.setOnKeyListener(this);
+        observSlow.setOnKeyListener(this);
+        observPlayedDefense.setOnKeyListener(this);
+        observPenalties.setOnKeyListener(this);
+        observNotMuch.setOnKeyListener(this);
+        observJerky.setOnKeyListener(this);
+        observHatchPickup.setOnKeyListener(this);
+        observFellOver.setOnKeyListener(this);
+        observFellApart.setOnKeyListener(this);
+        observFast.setOnKeyListener(this);
+        observDns.setOnKeyListener(this);
+        observDiedMid.setOnKeyListener(this);
+        observDiedBack.setOnKeyListener(this);
+        observCargoPickup.setOnKeyListener(this);
+        summaryInput.setOnKeyListener(this);
+        issuesInput.setOnKeyListener(this);
+
     /*
         teleopCubesInOurSwitchInput.setOnKeyListener(null);
         teleopCubesInTheirSwitchInput.setOnKeyListener(null);
@@ -262,6 +405,18 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void setSpinnerError(Spinner spinner, String error){
+        View selectedView = spinner.getSelectedView();
+        if (selectedView instanceof TextView){
+            spinner.requestFocus();
+            TextView selectedTextView = (TextView) selectedView;
+            selectedTextView.setError("error");
+            selectedTextView.setTextColor(Color.RED);
+            selectedTextView.setText(error);
+
         }
     }
 
@@ -475,6 +630,241 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopCubesInScaleInput.setText("" + number);
     }
 */
+    // this method sets up a string for a group of checkBoxes
+
+    public void setString(View view) {
+        Boolean checked = ((CheckBox) view).isChecked();
+        String s1;
+
+        switch (view.getId()) {
+            case R.id.observ_cargo_pickup:
+                s1 = observCargoPickup.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_died_back:
+                s1 = observDiedBack.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_died_mid:
+                s1 = observDiedMid.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_dns:
+                s1 = observDns.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_fast:
+                s1 = observFast.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_fell_apart:
+                s1 = observFellApart.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_fell_over:
+                s1 = observFellOver.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_hatch_pickup:
+                s1 = observHatchPickup.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_jerky:
+                s1 = observJerky.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_not_much:
+                s1 = observNotMuch.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_penalties:
+                s1 = observPenalties.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_played_defense:
+                s1 = observPlayedDefense.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_slow:
+                s1 = observSlow.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_slowed_by_robot:
+                s1 = observSlowedByRobot.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_smooth:
+                s1 = observsmooth.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+        }
+    }
+
 
     /*This method will look at all of the text/number input fields and set error
     *for validation of data entry
@@ -578,6 +968,12 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         if (!allInputsPassed) {
             return;
         }
+
+        final RadioButton defenseEffectivenessRadiobtn = findViewById(defenseEffectiveness.getCheckedRadioButtonId());
+        final RadioButton overallEffectivenessRadiobtn = findViewById(overallEffectivenessRadioGoup.getCheckedRadioButtonId());
+        final RadioButton overallPlacementRadiobtn = findViewById(overallPlacementRadioGoup.getCheckedRadioButtonId());
+        final RadioButton trainedDriveTeamRadiobtn = findViewById(trainedDriveTeamRadioGoup.getCheckedRadioButtonId());
+
     /*
         final String cubePickup = (cubePickupFloorCheckBox.isChecked() ? "Floor" : "") +
                                     (cubePickupPortalCheckBox.isChecked() ? "Portal" : "");
@@ -601,6 +997,16 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 teleopDataStringList.add(getTextInputLayoutString(teleopCargoTopInputLayout));
                 teleopDataStringList.add(getTextInputLayoutString(teleopCargoMiddleInputLayout));
                 teleopDataStringList.add(getTextInputLayoutString(teleopCargoBottomInputLayout));
+                teleopDataStringList.add(defenseEffectivenessRadiobtn.getText().toString());
+                teleopDataStringList.add(endGameLocationSpinner.getSelectedItem().toString());
+                teleopDataStringList.add(cycleTimeSpinner.getSelectedItem().toString());
+                teleopDataStringList.add(overallEffectivenessRadiobtn.getText().toString());
+                teleopDataStringList.add(overallPlacementRadiobtn.getText().toString());
+                teleopDataStringList.add(trainedDriveTeamRadiobtn.getText().toString());
+                teleopDataStringList.add(observations);
+                teleopDataStringList.add(summaryInput.getText().toString());
+                teleopDataStringList.add(issuesInput.getText().toString());
+
 /*
                 teleopDataStringList.add(cubePickup);
                 teleopDataStringList.add(climb_Radiobtn.getText());
@@ -661,6 +1067,29 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopCargoTopInput.setText("" + teleopCargotop);
         teleopCargoMiddleInput.setText("" + teleopCargoMiddle);
         teleopCargoBottomInput.setText("" + teleopCargoBottom);
+        defenseEffectiveness.clearCheck();
+        endGameLocationSpinner.setSelection(0);
+        cycleTimeSpinner.setSelection(0);
+        overallEffectivenessRadioGoup.clearCheck();
+        overallPlacementRadioGoup.clearCheck();
+        trainedDriveTeamRadioGoup.clearCheck();
+        observsmooth.setChecked(false);
+        observSlowedByRobot.setChecked(false);
+        observSlow.setChecked(false);
+        observPlayedDefense.setChecked(false);
+        observPenalties.setChecked(false);
+        observNotMuch.setChecked(false);
+        observJerky.setChecked(false);
+        observHatchPickup.setChecked(false);
+        observFellOver.setChecked(false);
+        observFellApart.setChecked(false);
+        observFast.setChecked(false);
+        observDns.setChecked(false);
+        observDiedMid.setChecked(false);
+        observDiedBack.setChecked(false);
+        observCargoPickup.setChecked(false);
+        summaryInput.setText(null);
+        issuesInput.setText(null);
 
        // teleopCubesInScaleInput.setText("" + teleopCubesInScale);
     /*
