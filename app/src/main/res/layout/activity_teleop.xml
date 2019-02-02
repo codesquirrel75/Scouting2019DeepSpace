@@ -39,7 +39,7 @@
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/teleop_cargo_ship_hatch_panel_input_layout"
-                android:layout_width="match_parent"
+                android:layout_width="200sp"
                 android:layout_height="match_parent"
                 android:hint="@string/hatchPanelsOnCargoShip"
                 app:errorEnabled="true"
@@ -58,11 +58,6 @@
             </android.support.design.widget.TextInputLayout>
 
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
             <Button
                 android:id="@+id/decrease_teleop_cargo_in_cargo_ship"
                 android:layout_width="30pt"
@@ -79,7 +74,7 @@
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/teleop_cargo_in_cargo_ship_input_layout"
-                android:layout_width="match_parent"
+                android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:hint="@string/cargoInCargoShip"
                 app:errorEnabled="true"
@@ -125,7 +120,7 @@
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/teleop_hatch_panel_top_input_layout"
-                android:layout_width="match_parent"
+                android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:hint="@string/hatchPanelTop"
                 app:errorEnabled="true"
@@ -133,6 +128,42 @@
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/teleop_hatch_panel_top_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:enabled="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <Button
+                android:id="@+id/decrease_teleop_cargo_top"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseCargoTopInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_cargo_top"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoTopInput"
+                android:text="@string/plus"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/teleop_cargo_top_input_layout"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:hint="@string/cargoTop"
+                app:errorEnabled="true"
+                tools:ignore="UnknownId">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/teleop_cargo_top_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -166,7 +197,7 @@
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/teleop_hatch_panel_middle_input_layout"
-                android:layout_width="match_parent"
+                android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:hint="@string/hatchPanelMiddle"
                 app:errorEnabled="true"
@@ -174,6 +205,42 @@
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/teleop_hatch_panel_middle_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:enabled="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <Button
+                android:id="@+id/decrease_teleop_cargo_middle"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseCargoMiddleInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_cargo_middle"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoMiddleInput"
+                android:text="@string/plus"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/teleop_cargo_middle_input_layout"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:hint="@string/cargoMiddle"
+                app:errorEnabled="true"
+                tools:ignore="UnknownId">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/teleop_cargo_middle_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -207,7 +274,7 @@
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/teleop_hatch_panel_bottom_input_layout"
-                android:layout_width="match_parent"
+                android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:hint="@string/hatchPanelBottom"
                 app:errorEnabled="true"
@@ -226,94 +293,7 @@
             </android.support.design.widget.TextInputLayout>
 
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/decrease_teleop_cargo_top"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="decreaseCargoTopInput"
-                android:text="@string/minus"/>
-            <Button
-                android:id="@+id/increase_teleop_cargo_top"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="increaseCargoTopInput"
-                android:text="@string/plus"
-                />
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/teleop_cargo_top_input_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/cargoTop"
-                app:errorEnabled="true"
-                tools:ignore="UnknownId">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/teleop_cargo_top_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:enabled="true" />
-            </android.support.design.widget.TextInputLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/decrease_teleop_cargo_middle"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="decreaseCargoMiddleInput"
-                android:text="@string/minus"/>
-            <Button
-                android:id="@+id/increase_teleop_cargo_middle"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="increaseCargoMiddleInput"
-                android:text="@string/plus"
-                />
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/teleop_cargo_middle_input_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/cargoMiddle"
-                app:errorEnabled="true"
-                tools:ignore="UnknownId">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/teleop_cargo_middle_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:enabled="true" />
-            </android.support.design.widget.TextInputLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
             <Button
                 android:id="@+id/decrease_teleop_cargo_bottom"
                 android:layout_width="30pt"
@@ -330,7 +310,7 @@
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/teleop_cargo_bottom_input_layout"
-                android:layout_width="match_parent"
+                android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:hint="@string/cargoBottom"
                 app:errorEnabled="true"
@@ -351,6 +331,441 @@
 
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/defenseQuestion"/>
+
+        <RadioGroup
+            android:id="@+id/defense_effectiveness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/defense_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_1"/>
+
+            <RadioButton
+                android:id="@+id/defense_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_2"/>
+
+            <RadioButton
+                android:id="@+id/defense_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_3"/>
+
+            <RadioButton
+                android:id="@+id/defense_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_4"/>
+
+            <RadioButton
+                android:id="@+id/defense_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_5"/>
+
+            <RadioButton
+                android:id="@+id/defense_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_na"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/endgameHeading"
+            android:layout_margin="10dp"/>
+
+        <Spinner
+            android:id="@+id/end_game_location_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+        </Spinner>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/generalInfoHeading"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cycle_time_heading"
+            android:layout_margin="10dp"/>
+
+        <Spinner
+            android:id="@+id/cycle_time_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+
+        </Spinner>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/over_all_Effectiveness_heading"
+            android:layout_margin="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/overall_effectiveness_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/overall_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_1"/>
+
+            <RadioButton
+                android:id="@+id/overall_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_2"/>
+
+            <RadioButton
+                android:id="@+id/overall_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_3"/>
+
+            <RadioButton
+                android:id="@+id/overall_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_4"/>
+
+            <RadioButton
+                android:id="@+id/overall_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_5"/>
+
+            <RadioButton
+                android:id="@+id/overall_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_na"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/over_all_Effectiveness_heading"
+            android:layout_margin="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/overall_hatch_cargo_placement_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/overall_placement_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_1"/>
+
+            <RadioButton
+                android:id="@+id/overall_placement_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_2"/>
+
+            <RadioButton
+                android:id="@+id/overall_placement_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_3"/>
+
+            <RadioButton
+                android:id="@+id/overall_placement_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_4"/>
+
+            <RadioButton
+                android:id="@+id/overall_placement_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_5"/>
+
+            <RadioButton
+                android:id="@+id/overall_placement_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_na"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/trained_drive_team_heading"
+            android:layout_margin="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/trained_drive_team_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/drive_team_placement_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_1"/>
+
+            <RadioButton
+                android:id="@+id/drive_team_placement_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_2"/>
+
+            <RadioButton
+                android:id="@+id/drive_team_placement_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_3"/>
+
+            <RadioButton
+                android:id="@+id/drive_team_placement_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_4"/>
+
+            <RadioButton
+                android:id="@+id/drive_team_placement_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_5"/>
+
+            <RadioButton
+                android:id="@+id/drive_team_placement_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_na"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/robotObservations"
+            android:layout_margin="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/observ_fast"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_fast"/>
+
+                <CheckBox
+                    android:id="@+id/observ_played_defense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_played_defense"/>
+
+                <CheckBox
+                    android:id="@+id/observ_died_mid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_died_mid"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/observ_slow"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_slow"/>
+
+                <CheckBox
+                    android:id="@+id/observ_hatch_pickup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_hatch_pickup"/>
+
+                <CheckBox
+                    android:id="@+id/observ_died_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_died_back"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/observ_jerky"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_jerky"/>
+
+                <CheckBox
+                    android:id="@+id/observ_cargo_pickup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_cargo_pickup"/>
+
+                <CheckBox
+                    android:id="@+id/observ_fell_apart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_fell_apart"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/observ_smooth"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_smooth"/>
+
+                <CheckBox
+                    android:id="@+id/observ_slowed_by_robot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_slowed_by_robot"/>
+
+                <CheckBox
+                    android:id="@+id/observ_not_much"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_not_much"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/observ_fell_over"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_fell_over"/>
+
+                <CheckBox
+                    android:id="@+id/observ_penalties"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_penalties"/>
+
+                <CheckBox
+                    android:id="@+id/observ_dns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_dns"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/summaryHeading"/>
+
+        <EditText
+            android:autofillHints="Summary"
+            android:inputType="text"
+            android:id="@+id/summary_input"
+            android:hint="@string/summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/issuesHeading"/>
+
+        <EditText
+            android:autofillHints="Issues"
+            android:inputType="text"
+            android:id="@+id/issues_input"
+            android:hint="@string/issues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
 
@@ -359,353 +774,12 @@
             android:layout_width="match_parent"
             android:layout_height="30pt"
             android:onClick="saveData"
-            android:text="@string/saveButton"/>
+            android:text="@string/saveButton"
+            android:layout_margin="60dp"/>
 
     </LinearLayout>
 
-  <!--
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-
-        <Button
-            android:id="@+id/decrease_teleopCubesInOurSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="decreaseTeleopCubesInOurSwitchInput"
-            android:text="-"
-            app:layout_constraintTop_toBottomOf="@id/decrease_teleopCubesInExchange"
-            app:layout_constraintEnd_toStartOf="@id/teleopCubesInOurSwitch_input_layout"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/teleopCubesInOurSwitch_input_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/cubesInOurSwitch"
-            app:errorEnabled="true"
-            app:layout_constraintTop_toBottomOf="@id/decrease_teleopCubesInExchange"
-            app:layout_constraintEnd_toStartOf="@id/increase_teleopCubesInOurSwitch"
-            app:layout_constraintStart_toEndOf="@id/decrease_teleopCubesInOurSwitch">
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/teleopCubesInOurSwitch_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:clickable="false"
-                android:cursorVisible="false"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="parent" />
-        </android.support.design.widget.TextInputLayout>
-
-        <Button
-            android:id="@+id/increase_teleopCubesInOurSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="increaseTeleopCubesInOurSwitchInput"
-            android:text="+"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/decrease_teleopCubesInExchange"
-            app:layout_constraintStart_toEndOf="@id/teleopCubesInOurSwitch_input_layout" />
-
-
-        <Button
-            android:id="@+id/decrease_teleopCubesInTheirSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="decreaseTeleopCubesInTheirSwitchInput"
-            android:text="-"
-            app:layout_constraintTop_toBottomOf="@id/decrease_teleopCubesInOurSwitch"
-            app:layout_constraintEnd_toStartOf="@id/teleopCubesInTheirSwitch_input_layout"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/teleopCubesInTheirSwitch_input_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/cubesInTheirSwitch"
-            app:errorEnabled="true"
-            app:layout_constraintTop_toBottomOf="@id/decrease_teleopCubesInOurSwitch"
-            app:layout_constraintEnd_toStartOf="@id/increase_teleopCubesInTheirSwitch"
-            app:layout_constraintStart_toEndOf="@id/decrease_teleopCubesInTheirSwitch">
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/teleopCubesInTheirSwitch_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:clickable="false"
-                android:cursorVisible="false"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="parent" />
-        </android.support.design.widget.TextInputLayout>
-
-        <Button
-            android:id="@+id/increase_teleopCubesInTheirSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="increaseTeleopCubesInTheirSwitchInput"
-            android:text="+"
-            app:layout_constraintTop_toBottomOf="@id/decrease_teleopCubesInOurSwitch"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/teleopCubesInTheirSwitch_input_layout" />
-
-        <Button
-            android:id="@+id/decrease_teleopCubesInScale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="decreaseTeleopCubesInScaleInput"
-            android:text="-"
-            app:layout_constraintTop_toBottomOf="@id/decrease_teleopCubesInTheirSwitch"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toEndOf="@id/teleopCubesInScale_input_layout"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/teleopCubesInScale_input_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/cubesInScale"
-            app:errorEnabled="true"
-            app:layout_constraintTop_toBottomOf="@id/decrease_teleopCubesInTheirSwitch"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/increase_teleopCubesInScale"
-            app:layout_constraintStart_toEndOf="@id/decrease_teleopCubesInScale">
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/teleopCubesInScale_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:clickable="false"
-                android:cursorVisible="false"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="parent" />
-        </android.support.design.widget.TextInputLayout>
-
-        <Button
-            android:id="@+id/increase_teleopCubesInScale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="increaseTeleopCubesInScaleInput"
-            android:text="+"
-            app:layout_constraintTop_toBottomOf="@id/decrease_teleopCubesInTheirSwitch"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/teleopCubesInScale_input_layout" />
-
-
-        <TextView
-            android:id="@+id/cubePickup_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cubePickupHeading"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/teleopCubesInScale_input_layout" />
-
-        <LinearLayout
-            android:id="@+id/cubePickup_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cubePickup_textView">
-
-            <CheckBox
-                android:id="@+id/cubePickupFloor_checkBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cubePickupFloor" />
-
-            <CheckBox
-                android:id="@+id/cubePickupPortal_checkBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cubePickupPortal" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/climb_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/climbingHeading"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cubePickup_layout" />
-
-        <RadioGroup
-            android:id="@+id/climb_RadiobtnGrp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/climb_textView">
-
-            <RadioButton
-                android:id="@+id/ableToClimb_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/successClimb" />
-
-            <RadioButton
-                android:id="@+id/unableToClimb_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/failClimb" />
-
-            <RadioButton
-                android:id="@+id/notAttemptedClimb_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/noClimb" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/abilityToHelpClimb_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/abilityToHelpClimbHeading"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/climb_RadiobtnGrp" />
-
-        <RadioGroup
-            android:id="@+id/abilityToHelpClimb_RadiobtnGrp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/abilityToHelpClimb_textView">
-
-            <RadioButton
-                android:id="@+id/ableToHelpClimb_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ableToHelpClimb" />
-
-            <RadioButton
-                android:id="@+id/unableToHelpClimb_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/unableToHelpClimb" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/onPlatform_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/onPlatformHeading"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/abilityToHelpClimb_RadiobtnGrp" />
-
-        <RadioGroup
-            android:id="@+id/onPlatform_RadiobtnGrp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/onPlatform_textView">
-
-            <RadioButton
-                android:id="@+id/isOnPlatform"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/isOnPlatform" />
-
-            <RadioButton
-                android:id="@+id/isNotOnPlatform"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/isNotOnPlatform" />
-
-            <RadioButton
-                android:id="@+id/notAttemptedPlatform"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/notAttemptedPlatform" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/defense_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/defenseHeading"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/onPlatform_RadiobtnGrp" />
-
-        <RadioGroup
-            android:id="@+id/defense_RadiobtnGrp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/defense_textView">
-
-            <RadioButton
-                android:id="@+id/effectiveDefense_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/effectiveDefense" />
-
-            <RadioButton
-                android:id="@+id/ineffectiveDefense_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ineffectiveDefense" />
-
-            <RadioButton
-                android:id="@+id/receivedFoulsDefense_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/receivedFoulsDefense" />
-
-            <RadioButton
-                android:id="@+id/noDefense_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/noDefense" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/fouls_TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-                android:text="@string/fouls"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/defense_RadiobtnGrp" />
-
-        <CheckBox
-            android:id="@+id/fouls_chkbx"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fouls_TextView" />
-
-
-    </android.support.constraint.ConstraintLayout>
--->
 
 </ScrollView>
 

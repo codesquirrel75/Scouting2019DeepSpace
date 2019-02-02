@@ -167,50 +167,6 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
     public String observations = "";
 
-
-    //2018 vars
-/*
-    @BindView(R.id.teleopCubesInOurSwitch_input_layout)
-    public TextInputLayout teleopCubesInOurSwitchInputLayout;
-
-    @BindView(R.id.teleopCubesInTheirSwitch_input_layout)
-    public TextInputLayout teleopCubesInTheirSwitchInputLayout;
-
-    @BindView(R.id.teleopCubesInScale_input_layout)
-    public TextInputLayout teleopCubesInScaleInputLayout;
-
-
-
-    @BindView(R.id.teleopCubesInOurSwitch_input)
-    public TextInputEditText teleopCubesInOurSwitchInput;
-
-    @BindView(R.id.teleopCubesInTheirSwitch_input)
-    public TextInputEditText teleopCubesInTheirSwitchInput;
-
-    @BindView(R.id.teleopCubesInScale_input)
-    public TextInputEditText teleopCubesInScaleInput;
-
-    @BindView(R.id.cubePickupFloor_checkBox)
-    public CheckBox cubePickupFloorCheckBox;
-
-    @BindView(R.id.cubePickupPortal_checkBox)
-    public CheckBox cubePickupPortalCheckBox;
-
-    @BindView(R.id.fouls_chkbx)
-    public CheckBox foulsChbx;
-
-    @BindView(R.id.climb_RadiobtnGrp)
-    public RadioGroup climbRadiobtnGrp;
-
-    @BindView(R.id.abilityToHelpClimb_RadiobtnGrp)
-    public RadioGroup abilityToHelpClimbRadiobtnGrp;
-
-    @BindView(R.id.onPlatform_RadiobtnGrp)
-    public RadioGroup onPlatformRadiobtnGrp;
-
-    @BindView(R.id.defense_RadiobtnGrp)
-    public RadioGroup defenseRadiobtnGrp;
-*/
     @BindView(R.id.save_btn)
     public Button saveBtn;
 
@@ -232,8 +188,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     public String teamNumber;
 
     private ArrayList<CharSequence> teleopDataStringList;
-
-    /*When this activity is first called,
+/*
+ *When this activity is first called,
  *we will call the activity_auton layout so we can display
  *the user interface
  */
@@ -331,11 +287,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observCargoPickup.setOnKeyListener(this);
         summaryInput.setOnKeyListener(this);
         issuesInput.setOnKeyListener(this);
-    /*
-        teleopCubesInOurSwitchInput.setOnKeyListener(this);
-        teleopCubesInTheirSwitchInput.setOnKeyListener(this);
-        teleopCubesInScaleInput.setOnKeyListener(this);
-    */
+
     }
 
     /*If this activity enters a paused state the data will be set to null*/
@@ -375,11 +327,6 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         summaryInput.setOnKeyListener(this);
         issuesInput.setOnKeyListener(this);
 
-    /*
-        teleopCubesInOurSwitchInput.setOnKeyListener(null);
-        teleopCubesInTheirSwitchInput.setOnKeyListener(null);
-        teleopCubesInScaleInput.setOnKeyListener(null);
-    */
     }
 
     /* This method will display the options menu when the icon is pressed
@@ -572,64 +519,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     }
 
 
-/*
-    //Teleop cubes in our switch
-    public void decreaseTeleopCubesInOurSwitchInput(View view) {
-        if (teleopCubesInOurSwitch != 0) {
-            teleopCubesInOurSwitch = teleopCubesInOurSwitch - 1;
-            displayTeleopCubesInOurSwitchInput(teleopCubesInOurSwitch);
-        } else {
-        }
-    }
 
-    public void increaseTeleopCubesInOurSwitchInput(View view) {
-        teleopCubesInOurSwitch = teleopCubesInOurSwitch + 1;
-        displayTeleopCubesInOurSwitchInput(teleopCubesInOurSwitch);
-
-    }
-
-
-    private void displayTeleopCubesInOurSwitchInput(int number) {
-        teleopCubesInOurSwitchInput.setText("" + number);
-    }
-
-    //Teleop cubes in their switch
-    public void decreaseTeleopCubesInTheirSwitchInput(View view) {
-        if (teleopCubesInTheirSwitch != 0) {
-            teleopCubesInTheirSwitch = teleopCubesInTheirSwitch - 1;
-            displayTeleopCubesInTheirSwitchInput(teleopCubesInTheirSwitch);
-        } else {
-        }
-    }
-
-    public void increaseTeleopCubesInTheirSwitchInput(View view) {
-        teleopCubesInTheirSwitch = teleopCubesInTheirSwitch + 1;
-        displayTeleopCubesInTheirSwitchInput(teleopCubesInTheirSwitch);
-
-    }
-
-    private void displayTeleopCubesInTheirSwitchInput(int number) {
-        teleopCubesInTheirSwitchInput.setText("" + number);
-    }
-
-    //Teleop cubes in our scale
-    public void decreaseTeleopCubesInScaleInput(View view) {
-        if (teleopCubesInScale != 0) {
-            teleopCubesInScale = teleopCubesInScale - 1;
-            displayTeleopCubesInScaleInput(teleopCubesInScale);
-        } else {
-        }
-    }
-
-    public void increaseTeleopCubesInScaleInput(View view) {
-        teleopCubesInScale = teleopCubesInScale + 1;
-        displayTeleopCubesInScaleInput(teleopCubesInScale);
-    }
-
-    private void displayTeleopCubesInScaleInput(int number) {
-        teleopCubesInScaleInput.setText("" + number);
-    }
-*/
     // this method sets up a string for a group of checkBoxes
 
     public void setString(View view) {
@@ -952,16 +842,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(teleopCargoBottomInputLayout))) {
             teleopCargoBottomInputLayout.setError(getText(R.string.cargoBottomError));
             ViewUtils.requestFocus(teleopCargoBottomInputLayout, this);
-    /*
-        } else if (climbRadiobtnGrp.getCheckedRadioButtonId() == -1) {
-            ViewUtils.requestFocus(climbRadiobtnGrp, this);
-        } else if (defenseRadiobtnGrp.getCheckedRadioButtonId() == -1) {
-            ViewUtils.requestFocus(defenseRadiobtnGrp, this);
-        } else if (abilityToHelpClimbRadiobtnGrp.getCheckedRadioButtonId() == -1) {
-            ViewUtils.requestFocus(abilityToHelpClimbRadiobtnGrp, this);
-        } else if (onPlatformRadiobtnGrp.getCheckedRadioButtonId() == -1) {
-            ViewUtils.requestFocus(onPlatformRadiobtnGrp, this);
-    */
+
         } else {
             allInputsPassed = true;
         }
@@ -974,14 +855,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         final RadioButton overallPlacementRadiobtn = findViewById(overallPlacementRadioGoup.getCheckedRadioButtonId());
         final RadioButton trainedDriveTeamRadiobtn = findViewById(trainedDriveTeamRadioGoup.getCheckedRadioButtonId());
 
-    /*
-        final String cubePickup = (cubePickupFloorCheckBox.isChecked() ? "Floor" : "") +
-                                    (cubePickupPortalCheckBox.isChecked() ? "Portal" : "");
-        final RadioButton climb_Radiobtn = findViewById(climbRadiobtnGrp.getCheckedRadioButtonId());
-        final RadioButton abilityToHelpClimb_Radiobtn = findViewById(abilityToHelpClimbRadiobtnGrp.getCheckedRadioButtonId());
-        final RadioButton onPlatform_Radiobtn = findViewById(onPlatformRadiobtnGrp.getCheckedRadioButtonId());
-        final RadioButton defense_Radiobtn = findViewById(defenseRadiobtnGrp.getCheckedRadioButtonId());
-    */
+
         if(PermissionUtils.getPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             if (Environment.MEDIA_MOUNTED.equals(state)) {
                 File dir = new File(Environment.getExternalStorageDirectory() + "/Scouting");
@@ -1007,15 +881,6 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 teleopDataStringList.add(summaryInput.getText().toString());
                 teleopDataStringList.add(issuesInput.getText().toString());
 
-/*
-                teleopDataStringList.add(cubePickup);
-                teleopDataStringList.add(climb_Radiobtn.getText());
-                teleopDataStringList.add(abilityToHelpClimb_Radiobtn.getText());
-                teleopDataStringList.add(onPlatform_Radiobtn.getText());
-                teleopDataStringList.add(defense_Radiobtn.getText());
-
-                teleopDataStringList.add(String.valueOf(foulsChbx.isChecked()));
-*/
                 teleopDataStringList.add(ScouterInitialsActivity.getInitials());
 
                 String message = auton + "," + FormatStringUtils.addDelimiter(teleopDataStringList, ",") + "\n";
@@ -1050,10 +915,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopCargoTopInputLayout.setError(null);
         teleopCargoMiddleInputLayout.setError(null);
         teleopCargoBottomInputLayout.setError(null);
-    /*
-        teleopCubesInTheirSwitchInputLayout.setError(null);
-        teleopCubesInScaleInputLayout.setError(null);
-    */
+
     }
 
     /*The method will clear all the data in the text fields, checkboxes, and
@@ -1091,16 +953,6 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         summaryInput.setText(null);
         issuesInput.setText(null);
 
-       // teleopCubesInScaleInput.setText("" + teleopCubesInScale);
-    /*
-        cubePickupPortalCheckBox.setChecked(false);
-        cubePickupFloorCheckBox.setChecked(false);
-
-        climbRadiobtnGrp.clearCheck();
-        abilityToHelpClimbRadiobtnGrp.clearCheck();
-        onPlatformRadiobtnGrp.clearCheck();
-        defenseRadiobtnGrp.clearCheck();
-    */
     }
 
     /* This method will change the text entered into the app into a string if it is not already*/
