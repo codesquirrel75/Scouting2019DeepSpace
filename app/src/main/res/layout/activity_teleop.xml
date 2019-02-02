@@ -340,7 +340,8 @@
             android:id="@+id/defense_effectiveness"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:checkedButton="@id/defense_na">
 
             <RadioButton
                 android:id="@+id/defense_1"
@@ -428,7 +429,8 @@
             android:id="@+id/overall_effectiveness_radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:checkedButton="@id/overall_na">
 
             <RadioButton
                 android:id="@+id/overall_1"
@@ -484,7 +486,8 @@
             android:id="@+id/overall_hatch_cargo_placement_radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:checkedButton="@id/overall_placement_na">
 
             <RadioButton
                 android:id="@+id/overall_placement_1"
@@ -540,7 +543,8 @@
             android:id="@+id/trained_drive_team_radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:checkedButton="@id/drive_team_placement_na">
 
             <RadioButton
                 android:id="@+id/drive_team_placement_1"
