@@ -492,34 +492,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-     /*  if (keyCode != KeyEvent.KEYCODE_SPACE && keyCode != KeyEvent.KEYCODE_TAB) {
-            //TextInputEditText inputEditText = (TextInputEditText) v;
 
-            if (inputEditText != null) {
-
-                switch (inputEditText.getId()) {
-
-       //             case R.id.pit_teamNumber_input:
-       //                 pitTeamNumberInputLayout.setError(null);
-       //                 break;
-
-
-                    case R.id.pit_other_input:
-                        pitOtherInputLayout.setError(null);
-                        break;
-
-                    case R.id.pit_cubeNumberInExchange_input:
-                        pitCubeNumberInExchangeInputLayout.setError(null);
-                        break;
-
-                    case R.id.pit_arcadeGame_input:
-                        pitArcadeGameInputLayout.setError(null);
-                        break;
-
-                }
-            }
-        }
-    */
         return false;
     }
 

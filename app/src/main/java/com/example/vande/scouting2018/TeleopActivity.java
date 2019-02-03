@@ -242,12 +242,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 // Apply the adapter to the spinner
         cycletimespinner.setAdapter(cycletimeadapter);
 
-
-
-       // displayTeleopCubesInOurSwitchInput(teleopCubesInOurSwitch);
-       // displayTeleopCubesInTheirSwitchInput(teleopCubesInTheirSwitch);
-       // displayTeleopCubesInScaleInput(teleopCubesInScale);
     }
+
 
     /*If this activity is resumed from a paused state the data
      *will be set to what they previously were set to
@@ -296,36 +292,36 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         super.onPause();
 
         teleopCargoShipHatchPanelInput.setOnKeyListener(null);
-        teleopCargoInCargoShipInput.setOnKeyListener(this);
-        teleopHatchPanelTopInput.setOnKeyListener(this);
-        teleopHatchPanelMiddleInput.setOnKeyListener(this);
-        teleopHatchPanelBottomInput.setOnKeyListener(this);
-        teleopCargoTopInput.setOnKeyListener(this);
-        teleopCargoTopInput.setOnKeyListener(this);
-        teleopCargoTopInput.setOnKeyListener(this);
-        defenseEffectiveness.setOnKeyListener(this);
-        endGameLocationSpinner.setOnKeyListener(this);
-        cycleTimeSpinner.setOnKeyListener(this);
-        overallEffectivenessRadioGoup.setOnKeyListener(this);
-        overallPlacementRadioGoup.setOnKeyListener(this);
-        trainedDriveTeamRadioGoup.setOnKeyListener(this);
-        observsmooth.setOnKeyListener(this);
-        observSlowedByRobot.setOnKeyListener(this);
-        observSlow.setOnKeyListener(this);
-        observPlayedDefense.setOnKeyListener(this);
-        observPenalties.setOnKeyListener(this);
-        observNotMuch.setOnKeyListener(this);
-        observJerky.setOnKeyListener(this);
-        observHatchPickup.setOnKeyListener(this);
-        observFellOver.setOnKeyListener(this);
-        observFellApart.setOnKeyListener(this);
-        observFast.setOnKeyListener(this);
-        observDns.setOnKeyListener(this);
-        observDiedMid.setOnKeyListener(this);
-        observDiedBack.setOnKeyListener(this);
-        observCargoPickup.setOnKeyListener(this);
-        summaryInput.setOnKeyListener(this);
-        issuesInput.setOnKeyListener(this);
+        teleopCargoInCargoShipInput.setOnKeyListener(null);
+        teleopHatchPanelTopInput.setOnKeyListener(null);
+        teleopHatchPanelMiddleInput.setOnKeyListener(null);
+        teleopHatchPanelBottomInput.setOnKeyListener(null);
+        teleopCargoTopInput.setOnKeyListener(null);
+        teleopCargoTopInput.setOnKeyListener(null);
+        teleopCargoTopInput.setOnKeyListener(null);
+        defenseEffectiveness.setOnKeyListener(null);
+        endGameLocationSpinner.setOnKeyListener(null);
+        cycleTimeSpinner.setOnKeyListener(null);
+        overallEffectivenessRadioGoup.setOnKeyListener(null);
+        overallPlacementRadioGoup.setOnKeyListener(null);
+        trainedDriveTeamRadioGoup.setOnKeyListener(null);
+        observsmooth.setOnKeyListener(null);
+        observSlowedByRobot.setOnKeyListener(null);
+        observSlow.setOnKeyListener(null);
+        observPlayedDefense.setOnKeyListener(null);
+        observPenalties.setOnKeyListener(null);
+        observNotMuch.setOnKeyListener(null);
+        observJerky.setOnKeyListener(null);
+        observHatchPickup.setOnKeyListener(null);
+        observFellOver.setOnKeyListener(null);
+        observFellApart.setOnKeyListener(null);
+        observFast.setOnKeyListener(null);
+        observDns.setOnKeyListener(null);
+        observDiedMid.setOnKeyListener(null);
+        observDiedBack.setOnKeyListener(null);
+        observCargoPickup.setOnKeyListener(null);
+        summaryInput.setOnKeyListener(null);
+        issuesInput.setOnKeyListener(null);
 
     }
 
@@ -814,6 +810,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     * about the saved message. We send a result back to the auton activity upon completion.
     * We then clear the data of the teleop activity and finish it to close and return
     * to the auton activty to clear its data*/
+
     public void saveData(View view) throws IOException {
         String state = Environment.getExternalStorageState();
         boolean allInputsPassed = false;
