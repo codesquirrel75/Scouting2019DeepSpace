@@ -5,7 +5,7 @@
     <string name="sendData">Send Data</string>
     <string name="submitInitials">Submit</string>
 
-    <string name="mainAuthor">Developed by FRC Team 107 | Updated by FRC Team 1918</string>
+    <string name="mainAuthor">Ken and Nate are the best! Revised 2/3/19</string>
 
 
 
@@ -26,16 +26,31 @@
     <string name="plus">+</string>
     
     <!--Auton Strings-->
-    
+
     <string name="teamNumberHeading">Team Number</string>
     <string name="matchNumberHeading">Match Number</string>
     <string name="startingLocationHeading">Starting Location</string>
-    
-    <string name="baselineCrossHeading">Baseline</string>
-    <string name="successBaseline">Success</string>
-    <string name="failBaseline">Fail</string>
-    <string name="notAttemptedBaseline">N/A</string>
-    
+    <string-array name="startingLocation">
+        <item>Low Deck</item>
+        <item>Middle Deck</item>
+        <item>Upper Deck</item>
+    </string-array>
+
+    <string name="playStyleHeading">How did the team play?</string>
+    <string-array name="playStyle">
+        <item>Autonomous</item>
+        <item>Driver-Operated</item>
+        <item>Didn\'t Move</item>
+    </string-array>
+    <string name="HintA">Cargo Ship: Hatch Panel</string>
+    <string name="HintB">Cargo Ship: Cargo</string>
+    <string name="HintC">Rocket: Lower Level Hatch Panel</string>
+    <string name="HintD">Rocket: Lower Level Cargo</string>
+    <string name="HintE">Rocket: Middle Level Hatch Panel</string>
+    <string name="HintF">Rocket: Middle Level Cargo</string>
+    <string name="HintG">Rocket: Upper Level Hatch Panel</string>
+    <string name="HintH">Rocket: Upper Level Cargo</string>
+
     <string name="saveButton">Save</string>
 
 
@@ -254,8 +269,8 @@
 
         <item> </item>
         <item>Less than 10 seconds</item>
-        <item>10-20 Seconds</item>
-        <item>20-30 Seconds</item>
+        <item>10 to 20 Seconds</item>
+        <item>20 to 30 Seconds</item>
         <item>30+ Seconds</item>
         <item>N/A</item>
 
@@ -307,8 +322,10 @@
     <string name="issuesHeading">List any issues the robot had.</string>
     <string name="issues">Enter Issues here</string>
     <string name="summary">Enter Summary Here</string>
-
-
+    <string name="baselineCrossHeading">Baseline</string>
+    <string name="successBaseline">Success</string>
+    <string name="failBaseline">Fail</string>
+    <string name="notAttemptedBaseline">N/A</string>
     <!--  Delete These when done with Auton -->
 
 

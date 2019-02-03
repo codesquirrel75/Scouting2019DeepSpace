@@ -21,13 +21,12 @@
                 android:id="@+id/matchNumber_input_layout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
                 android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginStart="18dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginRight="18dp"
                 android:hint="@string/matchNumberHeading"
                 app:errorEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/teamNumber_input_layout"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -45,12 +44,11 @@
                 android:id="@+id/teamNumber_input_layout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="18dp"
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="18dp"
-                android:layout_marginStart="18dp"
                 android:hint="@string/teamNumberHeading"
                 app:errorEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/startingLocation_Header"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/matchNumber_input_layout">
@@ -59,204 +57,465 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/teamNumberHeading"/>
+                    android:text="@string/teamNumberHeading" />
+
                 <Spinner
                     android:id="@+id/team_number_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="30pt"
-                    android:layout_weight="1">
-                </Spinner>
+                    android:layout_weight="1"></Spinner>
 
-                    </android.support.design.widget.TextInputLayout>
+            </android.support.design.widget.TextInputLayout>
 
-                 <TextView
-                     android:id="@+id/startingLocation_TextView"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:gravity="center"
-                     android:text="@string/startingLocationHeading"
-                     app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintStart_toStartOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/teamNumber_input_layout"
-                     tools:layout_editor_absoluteX="0dp" />
+            <TextView
+                android:id="@+id/startingLocation_Header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:gravity="center"
+                android:text="@string/startingLocationHeading"
+                app:layout_constraintBottom_toTopOf="@+id/starting_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/teamNumber_input_layout" />
 
-                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                     android:id="@+id/startingLocation_RadiobtnGrp"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:gravity="center"
-                     android:orientation="horizontal"
-                     app:layout_constraintLeft_toLeftOf="parent"
-                     app:layout_constraintRight_toRightOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/startingLocation_TextView">
+            <Spinner
+                android:id="@+id/starting_location"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_marginTop="8dp"
+                android:entries="@array/startingLocation"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startingLocation_Header" />
 
-                     <RadioButton
-                         android:id="@+id/leftStartingLocation_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/leftStarting" />
-
-                     <RadioButton
-                         android:id="@+id/centerStartingLocation_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/centerStarting" />
-
-                     <RadioButton
-                         android:id="@+id/rightStartingLocation_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/rightStarting" />
-                 </RadioGroup>
-
-                 <TextView
-                     android:id="@+id/baseLine_TextView"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:layout_marginTop="14dp"
-                     android:gravity="center"
-                     android:text="@string/baselineCrossHeading"
-                     app:layout_constraintLeft_toLeftOf="parent"
-                     app:layout_constraintRight_toRightOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/startingLocation_RadiobtnGrp" />
-
-                 <RadioGroup
-                     android:id="@+id/baseLine_RadiobtnGrp"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:gravity="center"
-                     android:orientation="horizontal"
-                     app:layout_constraintLeft_toLeftOf="parent"
-                     app:layout_constraintRight_toRightOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/baseLine_TextView">
-
-                     <RadioButton
-                         android:id="@+id/successBaseline_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/successBaseline" />
-
-                     <RadioButton
-                         android:id="@+id/failBaseline_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/failBaseline" />
-
-                     <RadioButton
-                         android:id="@+id/notAttemptedBaseline_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/notAttemptedBaseline" />
-                 </RadioGroup>
-
-                 <TextView
-                     android:id="@+id/cubeInSwitch_TextView"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:layout_marginTop="14dp"
-                     android:gravity="center"
-                     android:text="@string/cubeInSwitchHeading"
-                     app:layout_constraintLeft_toLeftOf="parent"
-                     app:layout_constraintRight_toRightOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/baseLine_RadiobtnGrp" />
-
-                 <RadioGroup
-                     android:id="@+id/cubeInSwitch_RadiobtnGrp"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:gravity="center"
-                     android:orientation="horizontal"
-                     app:layout_constraintLeft_toLeftOf="parent"
-                     app:layout_constraintRight_toRightOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/cubeInSwitch_TextView">
-
-                     <RadioButton
-                         android:id="@+id/successSwitch_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/successSwitch" />
-
-                     <RadioButton
-                         android:id="@+id/failSwitch_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/failSwitch" />
-
-                     <RadioButton
-                         android:id="@+id/wrongSideSwitch_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/wrongSideSwitch" />
-
-                     <RadioButton
-                         android:id="@+id/notAttemptedSwitch_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/notAttemptedSwitch" />
-
-                 </RadioGroup>
-
-                 <TextView
-                     android:id="@+id/cubeInScale_TextView"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:layout_marginTop="14dp"
-                     android:gravity="center"
-                     android:text="@string/cubeInScaleHeading"
-                     app:layout_constraintLeft_toLeftOf="parent"
-                     app:layout_constraintRight_toRightOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/cubeInSwitch_RadiobtnGrp" />
-
-                 <RadioGroup
-                     android:id="@+id/cubeInScale_RadiobtnGrp"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:gravity="center"
-                     android:orientation="horizontal"
-                     app:layout_constraintHorizontal_bias="1.0"
-                     app:layout_constraintLeft_toLeftOf="parent"
-                     app:layout_constraintRight_toRightOf="parent"
-                     app:layout_constraintTop_toBottomOf="@+id/cubeInScale_TextView">
-
-                     <RadioButton
-                         android:id="@+id/successScale_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/successScale" />
-
-                     <RadioButton
-                         android:id="@+id/failScale_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/failScale" />
-
-                     <RadioButton
-                         android:id="@+id/wrongSideScale_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/wrongSideScale" />
-
-                     <RadioButton
-                         android:id="@+id/notAttemptedScale_Radiobtn"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:text="@string/notAttemptedScale" />
-                 </RadioGroup>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cargoShipTitle"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/decrease_CS_HP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/starting_location" />
 
             <Button
-                     android:id="@+id/next_button"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:onClick="onShowTeleop"
-                     android:text="@string/nextButton"
-                     app:layout_constraintBottom_toBottomOf="parent"
-                     app:layout_constraintLeft_toLeftOf="parent"
-                     app:layout_constraintRight_toRightOf="parent"
-                     app:layout_constraintTop_toBottomOf="@id/cubeInScale_RadiobtnGrp"
-                     tools:layout_editor_absoluteX="8dp"
-                     tools:layout_editor_absoluteY="81dp" />
+                android:id="@+id/decrease_CS_HP"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="13dp"
+                android:onClick="decreaseCargoShipHatchPanelInput"
+                android:text="@string/minus"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toStartOf="@+id/increase_CS_HP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-             </android.support.constraint.ConstraintLayout>
+            <Button
+                android:id="@+id/increase_CS_HP"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginTop="13dp"
+                android:onClick="increaseCargoShipHatchPanelInput"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toStartOf="@+id/CS_HP_Layout"
+                app:layout_constraintStart_toEndOf="@+id/decrease_CS_HP"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/CS_HP_Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toStartOf="@+id/CS_C_Layout"
+                app:layout_constraintStart_toEndOf="@+id/increase_CS_HP"
+                app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/CS_HP_Input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/HintA"
+                    android:inputType="number"
+                    android:linksClickable="false"
+                    android:longClickable="false"
+                    android:numeric="integer"
+                    android:textIsSelectable="false" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/CS_C_Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toStartOf="@+id/increase_CS_C"
+                app:layout_constraintStart_toEndOf="@+id/CS_HP_Layout"
+                app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/CS_C_Input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/HintB"
+                    android:inputType="number"
+                    android:linksClickable="false"
+                    android:longClickable="false"
+                    android:numeric="integer"
+                    android:textIsSelectable="false" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/increase_CS_C"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginTop="13dp"
+                android:onClick="increaseCargoInCargoShipInput"
+                android:text="@string/plus"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toStartOf="@+id/decrease_CS_C"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <Button
+                android:id="@+id/decrease_CS_C"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="20dp"
+                android:onClick="decreaseCargoInCargoShipInput"
+                android:text="@string/minus"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/rocketShipTitle"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/decrease_CS_HP" />
+
+            <Button
+                android:id="@+id/decrease_R_L_HP"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginStart="20dp"
+                android:onClick="decreaseHatchPanelBottomInput"
+                android:text="@string/minus"
+                app:layout_constraintEnd_toStartOf="@+id/increase_R_L_HP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <Button
+                android:id="@+id/increase_R_L_HP"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseHatchPanelBottomInput"
+                android:text="@string/plus"
+                app:layout_constraintStart_toEndOf="@+id/decrease_R_L_HP"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/R_L_HP_Layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/R_M_HP_Layout"
+                app:layout_constraintEnd_toStartOf="@+id/R_L_C_Layout"
+                app:layout_constraintStart_toEndOf="@+id/increase_R_L_HP"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/R_L_HP_Input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/HintC"
+                    android:inputType="number"
+                    android:linksClickable="false"
+                    android:longClickable="false"
+                    android:numeric="integer"
+                    android:textIsSelectable="false" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/R_L_C_Layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/R_M_C_Layout"
+                app:layout_constraintEnd_toStartOf="@+id/increase_R_L_C"
+                app:layout_constraintStart_toEndOf="@+id/R_L_HP_Layout"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/R_L_C_Input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/HintD"
+                    android:inputType="number"
+                    android:linksClickable="false"
+                    android:longClickable="false"
+                    android:numeric="integer"
+                    android:textIsSelectable="false" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/increase_R_L_C"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoBottomInput"
+                android:text="@string/plus"
+                app:layout_constraintEnd_toStartOf="@+id/decrease_R_L_C"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <Button
+                android:id="@+id/decrease_R_L_C"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginEnd="20dp"
+                android:onClick="decreaseCargoBottomInput"
+                android:text="@string/minus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <Button
+                android:id="@+id/decrease_R_M_HP"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginStart="20dp"
+                android:onClick="decreaseHatchPanelMiddleInput"
+                android:text="@string/minus"
+                app:layout_constraintEnd_toStartOf="@+id/increase_R_M_HP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/decrease_R_L_HP" />
+
+            <Button
+                android:id="@+id/increase_R_M_HP"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseHatchPanelMiddleInput"
+                android:text="@string/plus"
+                app:layout_constraintStart_toEndOf="@+id/decrease_R_M_HP"
+                app:layout_constraintTop_toBottomOf="@+id/increase_R_L_HP" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/R_M_HP_Layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/R_U_HP_Layout"
+                app:layout_constraintEnd_toStartOf="@+id/R_M_C_Layout"
+                app:layout_constraintStart_toEndOf="@+id/increase_R_M_HP"
+                app:layout_constraintTop_toBottomOf="@+id/R_L_HP_Layout">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/R_M_HP_Input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/HintE"
+                    android:inputType="number"
+                    android:linksClickable="false"
+                    android:longClickable="false"
+                    android:numeric="integer"
+                    android:textIsSelectable="false" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/R_M_C_Layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/R_U_C_Layout"
+                app:layout_constraintEnd_toStartOf="@+id/increase_R_M_C"
+                app:layout_constraintStart_toEndOf="@+id/R_M_HP_Layout"
+                app:layout_constraintTop_toBottomOf="@+id/R_L_C_Layout">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/R_M_C_Input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/HintF"
+                    android:inputType="number"
+                    android:linksClickable="false"
+                    android:longClickable="false"
+                    android:numeric="integer"
+                    android:textIsSelectable="false" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/increase_R_M_C"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoMiddleInput"
+                android:text="@string/plus"
+                app:layout_constraintEnd_toStartOf="@+id/decrease_R_M_C"
+                app:layout_constraintTop_toBottomOf="@+id/increase_R_L_C" />
+
+            <Button
+                android:id="@+id/decrease_R_M_C"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginEnd="20dp"
+                android:onClick="decreaseCargoMiddleInput"
+                android:text="@string/minus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/decrease_R_L_C" />
+
+            <Button
+                android:id="@+id/decrease_R_U_HP"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginStart="20dp"
+                android:onClick="decreaseHatchPanelTopInput"
+                android:text="@string/minus"
+                app:layout_constraintEnd_toStartOf="@+id/increase_R_U_HP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/decrease_R_M_HP" />
+
+            <Button
+                android:id="@+id/increase_R_U_HP"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseHatchPanelTopInput"
+                android:text="@string/plus"
+                app:layout_constraintStart_toEndOf="@+id/decrease_R_U_HP"
+                app:layout_constraintTop_toBottomOf="@+id/increase_R_M_HP" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/R_U_HP_Layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView6"
+                app:layout_constraintEnd_toStartOf="@+id/R_U_C_Layout"
+                app:layout_constraintStart_toEndOf="@+id/increase_R_U_HP"
+                app:layout_constraintTop_toBottomOf="@+id/R_M_HP_Layout">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/R_U_HP_Input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/HintG"
+                    android:inputType="number"
+                    android:linksClickable="false"
+                    android:longClickable="false"
+                    android:numeric="integer"
+                    android:textIsSelectable="false" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/R_U_C_Layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView6"
+                app:layout_constraintEnd_toStartOf="@+id/increase_R_M_C"
+                app:layout_constraintStart_toEndOf="@+id/R_U_HP_Layout"
+                app:layout_constraintTop_toBottomOf="@+id/R_M_C_Layout">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/R_U_C_Input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/HintH"
+                    android:inputType="number"
+                    android:linksClickable="false"
+                    android:longClickable="false"
+                    android:numeric="integer"
+                    android:textIsSelectable="false" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/increase_R_U_C"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoTopInput"
+                android:text="@string/plus"
+                app:layout_constraintEnd_toStartOf="@+id/decrease_R_U_C"
+                app:layout_constraintTop_toBottomOf="@+id/increase_R_M_C" />
+
+            <Button
+                android:id="@+id/decrease_R_U_C"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginEnd="20dp"
+                android:onClick="decreaseCargoTopInput"
+                android:text="@string/minus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/decrease_R_M_C" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/playStyleHeading"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/play_style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/decrease_R_U_HP" />
+
+            <Spinner
+                android:id="@+id/play_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="412dp"
+                android:entries="@array/playStyle"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toTopOf="@+id/next_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="onShowTeleop"
+                android:text="@string/nextButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
 
  </ScrollView>
 
