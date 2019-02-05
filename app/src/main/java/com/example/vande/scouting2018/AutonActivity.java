@@ -52,6 +52,9 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     @BindView(R.id.starting_location)
     public Spinner startingLocation;
 
+    @BindView(R.id.play_style)
+    public Spinner playStyle;
+
     @BindView(R.id.decrease_CS_HP)
     public Button decreaseCsHp;
 
@@ -211,6 +214,16 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         RLCInput.setOnKeyListener(this);
         RMCInput.setOnKeyListener(this);
         RUCInput.setOnKeyListener(this);
+        CsHpLayout.setOnKeyListener(this);
+        CsCLayout.setOnKeyListener(this);
+        RLHpLayout.setOnKeyListener(this);
+        RMHpLayout.setOnKeyListener(this);
+        RUHpLayout.setOnKeyListener(this);
+        RLCLayout.setOnKeyListener(this);
+        RMCLayout.setOnKeyListener(this);
+        RUCLayout.setOnKeyListener(this);
+        playStyle.setOnKeyListener(this);
+
     }
 
     /*If this activity enters a paused state the data will be set to null*/
@@ -462,6 +475,17 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
         autonDataStringList.add(TeamNumberInputLayout.getSelectedItem().toString());
         autonDataStringList.add(getTextInputLayoutString(matchNumberInputLayout));
+        autonDataStringList.add(getTextInputLayoutString(CsCLayout));
+        autonDataStringList.add(getTextInputLayoutString(CsHpLayout));
+        autonDataStringList.add(getTextInputLayoutString(RLHpLayout));
+        autonDataStringList.add(getTextInputLayoutString(RMHpLayout));
+        autonDataStringList.add(getTextInputLayoutString(RUHpLayout));
+        autonDataStringList.add(getTextInputLayoutString(RLCLayout));
+        autonDataStringList.add(getTextInputLayoutString(RMCLayout));
+        autonDataStringList.add(getTextInputLayoutString(RUCLayout));
+        autonDataStringList.add(startingLocation.getSelectedItem().toString());
+        autonDataStringList.add(playStyle.getSelectedItem().toString());
+
         final Intent intent = new Intent(this, TeleopActivity.class);
         intent.putExtra(AUTON_STRING_EXTRA, FormatStringUtils.addDelimiter(autonDataStringList, ","));
         intent.putExtra(MATCH_STRING_EXTRA, getTextInputLayoutString(matchNumberInputLayout));
@@ -498,6 +522,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         TeamNumberInputLayout.setSelection(0);
         matchNumberInput.setText("");
         startingLocation.setSelection(0);
+        playStyle.setSelection(0);
         CsHpInput.setText("");
         CsCInput.setText("");
         RLHpInput.setText("");
