@@ -16,13 +16,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="12pt"
-            android:text="@string/cargoShipTitle"/>
+            android:text="@string/cargoShipTitle"
+            android:gravity="center_horizontal"/>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
             <Button
                 android:id="@+id/decrease_hatchPanelsOnCargoShip"
                 android:layout_width="30pt"
@@ -34,8 +36,7 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:onClick="increaseCargoShipHatchPanelInput"
-                android:text="@string/plus"
-                />
+                android:text="@string/plus"/>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/teleop_cargo_ship_hatch_panel_input_layout"
@@ -54,23 +55,9 @@
                     android:enabled="true"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:layout_weight="1"/>
             </android.support.design.widget.TextInputLayout>
-
-
-            <Button
-                android:id="@+id/decrease_teleop_cargo_in_cargo_ship"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="decreaseCargoInCargoShipInput"
-                android:text="@string/minus"/>
-            <Button
-                android:id="@+id/increase_teleop_cargo_in_cargo_ship"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="increaseCargoInCargoShipInput"
-                android:text="@string/plus"
-                />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/teleop_cargo_in_cargo_ship_input_layout"
@@ -93,17 +80,36 @@
             </android.support.design.widget.TextInputLayout>
 
 
+            <Button
+                android:id="@+id/decrease_teleop_cargo_in_cargo_ship"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseCargoInCargoShipInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_cargo_in_cargo_ship"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoInCargoShipInput"
+                android:text="@string/plus"
+                />
+
+
+
+
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="12pt"
-            android:text="@string/rocketShipTitle"/>
+            android:text="@string/rocketShipTitle"
+            android:gravity="center_horizontal"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
             <Button
                 android:id="@+id/decrease_teleop_hatch_panel_top"
                 android:layout_width="30pt"
@@ -138,22 +144,6 @@
                     android:enabled="true" />
             </android.support.design.widget.TextInputLayout>
 
-
-
-            <Button
-                android:id="@+id/decrease_teleop_cargo_top"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="decreaseCargoTopInput"
-                android:text="@string/minus"/>
-            <Button
-                android:id="@+id/increase_teleop_cargo_top"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="increaseCargoTopInput"
-                android:text="@string/plus"
-                />
-
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/teleop_cargo_top_input_layout"
                 android:layout_width="200sp"
@@ -175,12 +165,30 @@
             </android.support.design.widget.TextInputLayout>
 
 
+            <Button
+                android:id="@+id/decrease_teleop_cargo_top"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseCargoTopInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_cargo_top"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoTopInput"
+                android:text="@string/plus"
+                />
+
+
+
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
             <Button
                 android:id="@+id/decrease_teleop_hatch_panel_middle"
                 android:layout_width="30pt"
@@ -215,22 +223,6 @@
                     android:enabled="true" />
             </android.support.design.widget.TextInputLayout>
 
-
-
-            <Button
-                android:id="@+id/decrease_teleop_cargo_middle"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="decreaseCargoMiddleInput"
-                android:text="@string/minus"/>
-            <Button
-                android:id="@+id/increase_teleop_cargo_middle"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="increaseCargoMiddleInput"
-                android:text="@string/plus"
-                />
-
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/teleop_cargo_middle_input_layout"
                 android:layout_width="200sp"
@@ -252,12 +244,30 @@
             </android.support.design.widget.TextInputLayout>
 
 
+            <Button
+                android:id="@+id/decrease_teleop_cargo_middle"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseCargoMiddleInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_cargo_middle"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoMiddleInput"
+                android:text="@string/plus"
+                />
+
+
+
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
             <Button
                 android:id="@+id/decrease_teleop_hatch_panel_bottom"
                 android:layout_width="30pt"
@@ -292,22 +302,6 @@
                     android:enabled="true" />
             </android.support.design.widget.TextInputLayout>
 
-
-
-            <Button
-                android:id="@+id/decrease_teleop_cargo_bottom"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="decreaseCargoBottomInput"
-                android:text="@string/minus"/>
-            <Button
-                android:id="@+id/increase_teleop_cargo_bottom"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:onClick="increaseCargoBottomInput"
-                android:text="@string/plus"
-                />
-
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/teleop_cargo_bottom_input_layout"
                 android:layout_width="200sp"
@@ -329,11 +323,29 @@
             </android.support.design.widget.TextInputLayout>
 
 
+            <Button
+                android:id="@+id/decrease_teleop_cargo_bottom"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="decreaseCargoBottomInput"
+                android:text="@string/minus"/>
+            <Button
+                android:id="@+id/increase_teleop_cargo_bottom"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:onClick="increaseCargoBottomInput"
+                android:text="@string/plus"
+                />
+
+
+
+
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="10pt"
             android:text="@string/defenseQuestion"/>
 
         <RadioGroup
@@ -391,6 +403,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/endgameHeading"
+            android:textSize="10pt"
             android:layout_margin="10dp"/>
 
         <Spinner
@@ -403,6 +416,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/generalInfoHeading"
+            android:textSize="10pt"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"/>
 
@@ -410,6 +424,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cycle_time_heading"
+            android:textSize="10pt"
             android:layout_margin="10dp"/>
 
         <Spinner
@@ -423,6 +438,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/over_all_Effectiveness_heading"
+            android:textSize="10pt"
             android:layout_margin="10dp"/>
 
         <RadioGroup
@@ -480,6 +496,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/over_all_Effectiveness_heading"
+            android:textSize="10pt"
             android:layout_margin="10dp"/>
 
         <RadioGroup
@@ -537,6 +554,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/trained_drive_team_heading"
+            android:textSize="10pt"
             android:layout_margin="10dp"/>
 
         <RadioGroup
@@ -594,6 +612,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/robotObservations"
+            android:textSize="10pt"
             android:layout_margin="10dp"/>
 
         <LinearLayout
@@ -747,6 +766,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="10pt"
             android:text="@string/summaryHeading"/>
 
         <EditText
@@ -761,6 +781,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="10pt"
             android:text="@string/issuesHeading"/>
 
         <EditText
@@ -778,6 +799,7 @@
             android:layout_width="match_parent"
             android:layout_height="30pt"
             android:onClick="saveData"
+            android:textSize="12pt"
             android:text="@string/saveButton"
             android:layout_margin="60dp"/>
 
