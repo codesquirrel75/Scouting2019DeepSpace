@@ -36,11 +36,13 @@
         <item>Upper Deck</item>
     </string-array>
 
-    <string name="playStyleHeading">How did the team play?</string>
+    <string name="playStyleHeading">How did the team play during SandStorm?</string>
+
     <string-array name="playStyle">
         <item>Autonomous</item>
         <item>Driver-Operated</item>
         <item>Didn\'t Move</item>
+
     </string-array>
     <string name="HintA">Cargo Ship: Hatch Panel</string>
     <string name="HintB">Cargo Ship: Cargo</string>
@@ -72,11 +74,11 @@
     <string name="cargoTop">Cargo Top</string>
     <string name="cargoMiddle">Cargo Middle</string>
     <string name="cargoBottom">Cargo Bottom</string>
-    <string name="defenseQuestion">How Effective was the robots Defense?</string>
+    <string name="defenseQuestion">How effective was the robot\'s defense?</string>
     <string name="endgameHeading">Where was the robot at end game?</string>
     <string name="generalInfoHeading">General Info</string>
-    <string name="cycle_time_heading">What was the robots average cycle time?</string>
-    <string name="over_all_Effectiveness_heading">Rate the overall Effectiveness of the robot during the match.</string>
+    <string name="cycle_time_heading">What was the robot\'s average cycle time?</string>
+    <string name="over_all_Effectiveness_heading">Rate the overall effectiveness of the robot during the match.</string>
     <string name="trained_drive_team_heading">How trained did the drive team look?</string>
 
     <!-- Observation strings -->
@@ -85,15 +87,15 @@
     <string name="observ_jerky">Jerky</string>
     <string name="observ_smooth">Smooth</string>
     <string name="observ_fell_over">Fell Over</string>
-    <string name="observ_died_mid">Died mid match</string>
+    <string name="observ_died_mid">Died during match</string>
     <string name="observ_died_back">Died but came back</string>
     <string name="observ_penalties">Got lots of penalties</string>
     <string name="observ_fell_apart">Robot fell apart</string>
     <string name="observ_played_defense">Played defense most of the match</string>
     <string name="observ_not_much">Didn\'t do much</string>
     <string name="observ_hatch_pickup">Had hard time picking up hatch panels</string>
-    <string name="observ_cargo_pickup">had hard time picking up cargo</string>
-    <string name="observ_slowed_by_robot">Slowed down by another robot</string>
+    <string name="observ_cargo_pickup">Had hard time picking up cargo</string>
+    <string name="observ_slowed_by_robot">Had defense played against them</string>
     <string name="observ_dns">Didn\'t show up</string>
 
 
@@ -153,7 +155,7 @@
     <string name="pitRobotWeightHint">Robot Weight</string>
     <string name="pitDriveTrain">Drive Train</string>
     <string name="pitProgrammingLanguage">Programming Language</string>
-    <string name="pitStartingHabPositionText">On what habitat platform do you prefer to start from</string>
+    <string name="pitStartingHabPositionText">On what habitat platform do you prefer to start from?</string>
     <string name="pitPreLoadText">What game piece do you preload?</string>
     <string name="pitHatch">Hatch panel</string>
     <string name="pitCargo">Cargo</string>
@@ -162,7 +164,7 @@
     <string name="pit15auton">Autonomous</string>
     <string name="pit15manual">Manual drive with camera</string>
     <string name="pit15nothing">Nothing</string>
-    <string name="pitHatchPanels">Where does your robot place hatch panels</string>
+    <string name="pitHatchPanels">Where does your robot place hatch panels?</string>
     <string name="pitCargoShip">Cargo Ship</string>
     <string name="pitRocketBottom">Rocket-Bottom</string>
     <string name="pitRocketMiddle">Rocket-middle</string>
@@ -245,8 +247,8 @@
     <!-- Hab Platform drop down array -->
     <string-array name="habPlatform">
         <item>Lowest deck</item>
-        <item>middle deck</item>
-        <item>highest deck</item>
+        <item>Middle deck</item>
+        <item>Highest deck</item>
     </string-array>
 
     <string-array name="endgame">
@@ -258,8 +260,8 @@
     <string-array name="endgame_location">
         <item> </item>
         <item>Lowest deck</item>
-        <item>middle deck</item>
-        <item>highest deck</item>
+        <item>Middle deck</item>
+        <item>Highest deck</item>
         <item>Still playing on field</item>
     </string-array>
 
@@ -269,8 +271,8 @@
 
         <item> </item>
         <item>Less than 10 seconds</item>
-        <item>10 to 20 Seconds</item>
-        <item>20 to 30 Seconds</item>
+        <item>10 to 15 Seconds</item>
+        <item>15 to 20 Seconds</item>
         <item>30+ Seconds</item>
         <item>N/A</item>
 
@@ -326,6 +328,7 @@
     <string name="successBaseline">Success</string>
     <string name="failBaseline">Fail</string>
     <string name="notAttemptedBaseline">N/A</string>
+    <string name="over_all_placement">Rate the overall placement of cargo and hatch panels</string>
     <!--  Delete These when done with Auton -->
 
 
