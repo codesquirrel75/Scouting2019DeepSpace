@@ -96,6 +96,12 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     @BindView(R.id.teleop_cargo_bottom_input)
     public TextInputEditText teleopCargoBottomInput;
 
+    @BindView(R.id.hatch_panel_pickup)
+    public RadioGroup HatchPanelPickup;
+
+    @BindView(R.id.cargo_pickup)
+    public RadioGroup CargoPickup;
+
     @BindView(R.id.defense_effectiveness)
     public RadioGroup defenseEffectiveness;
 
@@ -158,6 +164,21 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
     @BindView(R.id.observ_smooth)
     public CheckBox observsmooth;
+
+    @BindView(R.id.observ_average_speed)
+    public CheckBox observAverageSpeed;
+
+    @BindView(R.id.observ_dropped_hatches)
+    public CheckBox observDroppedHatches;
+
+    @BindView(R.id.observ_dropped_cargo)
+    public CheckBox observDroppedCargo;
+
+    @BindView(R.id.observ_hard_time_hatches)
+    public CheckBox observHardTimeHatches;
+
+    @BindView(R.id.observ_hard_time_cargo)
+    public  CheckBox observHardTimeCargo;
 
     @BindView(R.id.summary_input)
     public EditText summaryInput;
@@ -264,6 +285,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         endGameLocationSpinner.setOnKeyListener(this);
         cycleTimeSpinner.setOnKeyListener(this);
         overallEffectivenessRadioGoup.setOnKeyListener(this);
+        HatchPanelPickup.setOnKeyListener(this);
+        CargoPickup.setOnKeyListener(this);
         overallPlacementRadioGoup.setOnKeyListener(this);
         trainedDriveTeamRadioGoup.setOnKeyListener(this);
         observsmooth.setOnKeyListener(this);
@@ -281,6 +304,11 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observDiedMid.setOnKeyListener(this);
         observDiedBack.setOnKeyListener(this);
         observCargoPickup.setOnKeyListener(this);
+        observAverageSpeed.setOnKeyListener(this);
+        observDroppedHatches.setOnKeyListener(this);
+        observDroppedCargo.setOnKeyListener(this);
+        observHardTimeHatches.setOnKeyListener(this);
+        observHardTimeCargo.setOnKeyListener(this);
         summaryInput.setOnKeyListener(this);
         issuesInput.setOnKeyListener(this);
 
@@ -303,6 +331,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         endGameLocationSpinner.setOnKeyListener(null);
         cycleTimeSpinner.setOnKeyListener(null);
         overallEffectivenessRadioGoup.setOnKeyListener(null);
+        HatchPanelPickup.setOnKeyListener(null);
+        CargoPickup.setOnKeyListener(null);
         overallPlacementRadioGoup.setOnKeyListener(null);
         trainedDriveTeamRadioGoup.setOnKeyListener(null);
         observsmooth.setOnKeyListener(null);
@@ -320,6 +350,11 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observDiedMid.setOnKeyListener(null);
         observDiedBack.setOnKeyListener(null);
         observCargoPickup.setOnKeyListener(null);
+        observAverageSpeed.setOnKeyListener(null);
+        observDroppedHatches.setOnKeyListener(null);
+        observDroppedCargo.setOnKeyListener(null);
+        observHardTimeHatches.setOnKeyListener(null);
+        observHardTimeCargo.setOnKeyListener(null);
         summaryInput.setOnKeyListener(null);
         issuesInput.setOnKeyListener(null);
 
@@ -748,6 +783,81 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                     }
                 }
                 break;
+            case R.id.observ_average_speed:
+                s1 = observAverageSpeed.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_dropped_hatches:
+                s1 = observDroppedHatches.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_dropped_cargo:
+                s1 = observDroppedCargo.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_hard_time_hatches:
+                s1 = observHardTimeHatches.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
+            case R.id.observ_hard_time_cargo:
+                s1 = observHardTimeCargo.getText().toString() + " |";
+                if (checked) {
+                    if (observations.isEmpty()) {
+                        observations = s1;
+                    } else {
+                        observations = observations + s1;
+                    }
+                } else {
+                    if (observations.contains(s1)) {
+                        int start = observations.indexOf(s1);
+                        observations = observations.substring(0, start) + observations.substring(start + s1.length());
+                    }
+                }
+                break;
         }
     }
 
@@ -851,6 +961,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         final RadioButton overallEffectivenessRadiobtn = findViewById(overallEffectivenessRadioGoup.getCheckedRadioButtonId());
         final RadioButton overallPlacementRadiobtn = findViewById(overallPlacementRadioGoup.getCheckedRadioButtonId());
         final RadioButton trainedDriveTeamRadiobtn = findViewById(trainedDriveTeamRadioGoup.getCheckedRadioButtonId());
+        final RadioButton HatchPanelPickupRadiobtn = findViewById(HatchPanelPickup.getCheckedRadioButtonId());
+        final RadioButton CargoPickupRadiobtn = findViewById(CargoPickup.getCheckedRadioButtonId());
 
 
         if(PermissionUtils.getPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
@@ -868,6 +980,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 teleopDataStringList.add(getTextInputLayoutString(teleopCargoTopInputLayout));
                 teleopDataStringList.add(getTextInputLayoutString(teleopCargoMiddleInputLayout));
                 teleopDataStringList.add(getTextInputLayoutString(teleopCargoBottomInputLayout));
+                teleopDataStringList.add(HatchPanelPickupRadiobtn.getText().toString());
+                teleopDataStringList.add(CargoPickupRadiobtn.getText().toString());
                 teleopDataStringList.add(defenseEffectivenessRadiobtn.getText().toString());
                 teleopDataStringList.add(endGameLocationSpinner.getSelectedItem().toString());
                 teleopDataStringList.add(cycleTimeSpinner.getSelectedItem().toString());
@@ -929,6 +1043,8 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         defenseEffectiveness.clearCheck();
         endGameLocationSpinner.setSelection(0);
         cycleTimeSpinner.setSelection(0);
+        HatchPanelPickup.clearCheck();
+        CargoPickup.clearCheck();
         overallEffectivenessRadioGoup.clearCheck();
         overallPlacementRadioGoup.clearCheck();
         trainedDriveTeamRadioGoup.clearCheck();
@@ -947,6 +1063,11 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observDiedMid.setChecked(false);
         observDiedBack.setChecked(false);
         observCargoPickup.setChecked(false);
+        observAverageSpeed.setChecked(false);
+        observDroppedHatches.setChecked(false);
+        observDroppedCargo.setChecked(false);
+        observHardTimeHatches.setChecked(false);
+        observHardTimeCargo.setChecked(false);
         summaryInput.setText(null);
         issuesInput.setText(null);
 
