@@ -1,3 +1,11 @@
+/*
+
+ ***************  Code Designed by Team 107 Team Robotics *********************
+ ***************  Edited for Team 1918 By Nate and Ken    *********************
+
+
+ */
+
 package com.example.vande.scouting2018;
 
 import android.Manifest;
@@ -154,14 +162,14 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     @BindView(R.id.next_button)
     public Button nextButton;
 
-    int teleopCargoShipHatchPanel = 0;
-    int teleopCargoShipCargo = 0;
-    int teleopHatchPanelTop = 0;
-    int teleopHatchPanelMiddle = 0;
-    int teleopHatchPanelBottom =0;
-    int teleopCargotop = 0;
-    int teleopCargoMiddle = 0;
-    int teleopCargoBottom = 0;
+    int CargoShipHatchPanel = 0;
+    int CargoShipCargo = 0;
+    int HatchPanelTop = 0;
+    int HatchPanelMiddle = 0;
+    int HatchPanelBottom =0;
+    int Cargotop = 0;
+    int CargoMiddle = 0;
+    int CargoBottom = 0;
 
     private ArrayList<CharSequence> autonDataStringList;
     public static final int REQUEST_CODE = 1;
@@ -180,6 +188,15 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         autonDataStringList = new ArrayList<>();
 
         checkForPermissions();
+
+        displayCargoShipHatchPanelInput(CargoShipHatchPanel);
+        displayCargoShipCargoInput(CargoShipCargo);
+        displayHatchPanelTopInput(HatchPanelTop);
+        displayHatchPanelMiddleInput(HatchPanelMiddle);
+        displayHatchPanelBottomInput(HatchPanelBottom);
+        displayCargoTopInput(Cargotop);
+        displayCargoMiddleInput(CargoMiddle);
+        displayCargoBottomInput(CargoBottom);
 
         //  --- Team Numbers spinner ---
 
@@ -273,95 +290,95 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     /*Buttons for Cargo Ship*/
     //Hatch Panel
     public void decreaseCargoShipHatchPanelInput(View view) {
-        if (teleopCargoShipHatchPanel != 0) {
-            teleopCargoShipHatchPanel = teleopCargoShipHatchPanel - 1;
-            displayTeleopCargoShipHatchPanelInput(teleopCargoShipHatchPanel);
+        if (CargoShipHatchPanel != 0) {
+            CargoShipHatchPanel = CargoShipHatchPanel - 1;
+            displayCargoShipHatchPanelInput(CargoShipHatchPanel);
         }
     }
 
     public void increaseCargoShipHatchPanelInput(View view) {
-        if (teleopCargoShipHatchPanel <= 7) {
-            teleopCargoShipHatchPanel = teleopCargoShipHatchPanel + 1;
-            displayTeleopCargoShipHatchPanelInput(teleopCargoShipHatchPanel);
+        if (CargoShipHatchPanel <= 7) {
+            CargoShipHatchPanel = CargoShipHatchPanel + 1;
+            displayCargoShipHatchPanelInput(CargoShipHatchPanel);
         }
     }
 
-    private void displayTeleopCargoShipHatchPanelInput(int number) {
+    private void displayCargoShipHatchPanelInput(int number) {
         CsHpInput.setText("" + number);
     }
 
     //Cargo Ship Cargo
     public void decreaseCargoInCargoShipInput(View view) {
-        if (teleopCargoShipCargo != 0) {
-            teleopCargoShipCargo = teleopCargoShipCargo - 1;
-            displayTeleopCargoShipCargoInput(teleopCargoShipCargo);
+        if (CargoShipCargo != 0) {
+            CargoShipCargo = CargoShipCargo - 1;
+            displayCargoShipCargoInput(CargoShipCargo);
         }
     }
 
     public void increaseCargoInCargoShipInput(View view) {
-        if (teleopCargoShipCargo <= 7) {
-            teleopCargoShipCargo = teleopCargoShipCargo + 1;
-            displayTeleopCargoShipCargoInput(teleopCargoShipCargo);
+        if (CargoShipCargo <= 7) {
+            CargoShipCargo = CargoShipCargo + 1;
+            displayCargoShipCargoInput(CargoShipCargo);
         }
     }
 
-    private void displayTeleopCargoShipCargoInput(int number) {
+    private void displayCargoShipCargoInput(int number) {
         CsCInput.setText("" + number);
     }
 
     //Teleop Rocket Ship Hatch Panels
 
     public void decreaseHatchPanelTopInput(View view) {
-        if (teleopHatchPanelTop != 0) {
-            teleopHatchPanelTop = teleopHatchPanelTop - 1;
-            displayTeleopHatchPanelTopInput(teleopHatchPanelTop);
+        if (HatchPanelTop != 0) {
+            HatchPanelTop = HatchPanelTop - 1;
+            displayHatchPanelTopInput(HatchPanelTop);
         }
     }
 
     public void increaseHatchPanelTopInput(View view) {
-        if (teleopHatchPanelTop <= 3) {
-            teleopHatchPanelTop = teleopHatchPanelTop + 1;
-            displayTeleopHatchPanelTopInput(teleopHatchPanelTop);
+        if (HatchPanelTop <= 3) {
+            HatchPanelTop = HatchPanelTop + 1;
+            displayHatchPanelTopInput(HatchPanelTop);
         }
     }
 
-    private void displayTeleopHatchPanelTopInput(int number) {
+    private void displayHatchPanelTopInput(int number) {
         RUHpInput.setText("" + number);
     }
 
     public void decreaseHatchPanelMiddleInput(View view) {
-        if (teleopHatchPanelMiddle != 0) {
-            teleopHatchPanelMiddle = teleopHatchPanelMiddle - 1;
-            displayTeleopHatchPanelMiddleInput(teleopHatchPanelMiddle);
+        if (HatchPanelMiddle != 0) {
+            HatchPanelMiddle = HatchPanelMiddle - 1;
+            displayHatchPanelMiddleInput(HatchPanelMiddle);
         }
     }
 
     public void increaseHatchPanelMiddleInput(View view) {
-        if (teleopHatchPanelMiddle <= 3) {
-            teleopHatchPanelMiddle = teleopHatchPanelMiddle + 1;
-            displayTeleopHatchPanelMiddleInput(teleopHatchPanelMiddle);
+        if (HatchPanelMiddle <= 3) {
+            HatchPanelMiddle = HatchPanelMiddle + 1;
+            displayHatchPanelMiddleInput(HatchPanelMiddle);
         }
     }
 
-    private void displayTeleopHatchPanelMiddleInput(int number) {
+    private void displayHatchPanelMiddleInput(int number) {
         RMHpInput.setText("" + number);
     }
 
     public void decreaseHatchPanelBottomInput(View view) {
-        if (teleopHatchPanelBottom != 0) {
-            teleopHatchPanelBottom = teleopHatchPanelBottom - 1;
-            displayTeleopHatchPanelBottomInput(teleopHatchPanelBottom);
+        if (HatchPanelBottom != 0) {
+            HatchPanelBottom = HatchPanelBottom - 1;
+            displayHatchPanelBottomInput(HatchPanelBottom);
         }
     }
 
     public void increaseHatchPanelBottomInput(View view) {
-        if (teleopHatchPanelBottom <= 3) {
-            teleopHatchPanelBottom = teleopHatchPanelBottom + 1;
-            displayTeleopHatchPanelBottomInput(teleopHatchPanelBottom);
+        if (HatchPanelBottom <= 3) {
+            HatchPanelBottom = HatchPanelBottom + 1;
+            displayHatchPanelBottomInput(HatchPanelBottom);
         }
     }
 
-    private void displayTeleopHatchPanelBottomInput(int number) {
+    private void displayHatchPanelBottomInput(int number) {
         RLHpInput.setText("" + number);
     }
 
@@ -369,56 +386,56 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     //Teleop Rocket Ship Cargo
 
     public void decreaseCargoTopInput(View view) {
-        if (teleopCargotop != 0) {
-            teleopCargotop = teleopCargotop - 1;
-            displayTeleopCargoTopInput(teleopCargotop);
+        if (Cargotop != 0) {
+            Cargotop = Cargotop - 1;
+            displayCargoTopInput(Cargotop);
         }
     }
 
     public void increaseCargoTopInput(View view) {
-        if (teleopCargotop <= 3) {
-            teleopCargotop = teleopCargotop + 1;
-            displayTeleopCargoTopInput(teleopCargotop);
+        if (Cargotop <= 3) {
+            Cargotop = Cargotop + 1;
+            displayCargoTopInput(Cargotop);
         }
     }
 
-    private void displayTeleopCargoTopInput(int number) {
+    private void displayCargoTopInput(int number) {
         RUCInput.setText("" + number);
     }
 
     public void decreaseCargoMiddleInput(View view) {
-        if (teleopCargoMiddle != 0) {
-            teleopCargoMiddle = teleopCargoMiddle - 1;
-            displayTeleopCargoMiddleInput(teleopCargoMiddle);
+        if (CargoMiddle != 0) {
+            CargoMiddle = CargoMiddle - 1;
+            displayCargoMiddleInput(CargoMiddle);
         }
     }
 
     public void increaseCargoMiddleInput(View view) {
-        if (teleopCargoMiddle <= 3) {
-            teleopCargoMiddle = teleopCargoMiddle + 1;
-            displayTeleopCargoMiddleInput(teleopCargoMiddle);
+        if (CargoMiddle <= 3) {
+            CargoMiddle = CargoMiddle + 1;
+            displayCargoMiddleInput(CargoMiddle);
         }
     }
 
-    private void displayTeleopCargoMiddleInput(int number) {
+    private void displayCargoMiddleInput(int number) {
         RMCInput.setText("" + number);
     }
 
     public void decreaseCargoBottomInput(View view) {
-        if (teleopCargoBottom != 0) {
-            teleopCargoBottom = teleopCargoBottom - 1;
-            displayTeleopCargoBottomInput(teleopCargoBottom);
+        if (CargoBottom != 0) {
+            CargoBottom = CargoBottom - 1;
+            displayCargoBottomInput(CargoBottom);
         }
     }
 
     public void increaseCargoBottomInput(View view) {
-        if (teleopCargoBottom <= 3) {
-            teleopCargoBottom = teleopCargoBottom + 1;
-            displayTeleopCargoBottomInput(teleopCargoBottom);
+        if (CargoBottom <= 3) {
+            CargoBottom = CargoBottom + 1;
+            displayCargoBottomInput(CargoBottom);
         }
     }
 
-    private void displayTeleopCargoBottomInput(int number) {
+    private void displayCargoBottomInput(int number) {
         RLCInput.setText("" + number);
     }
 
@@ -484,7 +501,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         autonDataStringList.add(getTextInputLayoutString(RMCLayout));
         autonDataStringList.add(getTextInputLayoutString(RUCLayout));
         autonDataStringList.add(startingLocation.getSelectedItem().toString());
-        autonDataStringList.add(playStyle.getSelectedItem().toString());
+//      autonDataStringList.add(playStyle.getSelectedItem().toString());
 
         final Intent intent = new Intent(this, TeleopActivity.class);
         intent.putExtra(AUTON_STRING_EXTRA, FormatStringUtils.addDelimiter(autonDataStringList, ","));
@@ -523,14 +540,23 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         matchNumberInput.setText("");
         startingLocation.setSelection(0);
         playStyle.setSelection(0);
-        CsHpInput.setText("");
-        CsCInput.setText("");
-        RLHpInput.setText("");
-        RMHpInput.setText("");
-        RUHpInput.setText("");
-        RLCInput.setText("");
-        RMCInput.setText("");
-        RUCInput.setText("");
+        CargoShipHatchPanel = 0;
+        CargoShipCargo = 0;
+        HatchPanelTop = 0;
+        HatchPanelMiddle = 0;
+        HatchPanelBottom =0;
+        Cargotop = 0;
+        CargoMiddle = 0;
+        CargoBottom = 0;
+        CsHpInput.setText("" + CargoShipHatchPanel);
+        CsCInput.setText("" + CargoShipCargo);
+        RUHpInput.setText("" + HatchPanelTop);
+        RMHpInput.setText("" + HatchPanelMiddle);
+        RLHpInput.setText("" + HatchPanelBottom);
+        RUCInput.setText("" + Cargotop);
+        RMCInput.setText("" + CargoMiddle);
+        RLCInput.setText("" + CargoBottom);
+
     }
 
 
