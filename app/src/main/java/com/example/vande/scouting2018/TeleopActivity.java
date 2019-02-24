@@ -1,3 +1,11 @@
+/*
+
+***************  Code Designed by Team 107 Team Robotics *********************
+***************  Edited for Team 1918 By Nate and Ken    *********************
+
+
+ */
+
 package com.example.vande.scouting2018;
 
 import android.Manifest;

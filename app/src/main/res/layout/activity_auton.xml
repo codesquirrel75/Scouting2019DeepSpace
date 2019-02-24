@@ -419,7 +419,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/playStyleHeading"
                 android:textAlignment="center"
-                android:textSize="12pt"/>
+                android:textSize="12pt"
+                android:visibility="invisible"/>
 
             <Spinner
                 android:id="@+id/play_style"
@@ -429,7 +430,8 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="30dp"
                 android:entries="@array/playStyle"
-                android:spinnerMode="dropdown" />
+                android:spinnerMode="dropdown"
+                android:visibility="invisible"/>
 
             <Button
                 android:id="@+id/next_button"

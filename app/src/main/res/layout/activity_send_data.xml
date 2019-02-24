@@ -8,46 +8,49 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:text="@string/sendMatchData"
-        android:onClick="sendMatchData"/>
+        android:onClick="sendMatchData"
+        android:textSize="12pt"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:text="@string/sendPitData"
-        android:onClick="sendPitData"/>
+        android:onClick="sendPitData"
+        android:textSize="12pt"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:text="@string/sendRobotPhotosText"
-        android:onClick="sendRobotPhotos"/>
+        android:onClick="sendRobotPhotos"
+        android:textSize="12pt"/>
+<!--
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/concatenateDataText"
+            android:onClick="concatenateData"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/concatenateDataText"
-        android:onClick="concatenateData"/>
-
-    <RadioGroup
-        android:id="@+id/matchOrPit_RadiobtnGrp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RadioButton
-            android:id="@+id/match_btn"
+        <RadioGroup
+            android:id="@+id/matchOrPit_RadiobtnGrp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/concatenateMatch" />
+            android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/pit_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/concatenatePit" />
+            <RadioButton
+                android:id="@+id/match_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/concatenateMatch" />
 
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/pit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/concatenatePit" />
+
+        </RadioGroup>
 
     <EditText
         android:layout_width="match_parent"
@@ -55,5 +58,5 @@
         android:id="@+id/concatFolder_editText"
         android:text="@string/concatFolderEditTextValue"
         android:hint="@string/concatFolder" />
-
+-->
 </LinearLayout>

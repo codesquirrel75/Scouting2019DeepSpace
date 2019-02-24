@@ -33,12 +33,13 @@
     <string-array name="startingLocation">
         <item>Low Deck</item>
         <item>Middle Deck</item>
-        <item>Upper Deck</item>
+
     </string-array>
 
     <string name="playStyleHeading">How did the team play during SandStorm?</string>
 
     <string-array name="playStyle">
+        <item> </item>
         <item>Autonomous</item>
         <item>Driver-Operated</item>
         <item>Didn\'t Move</item>
@@ -80,6 +81,26 @@
     <string name="cycle_time_heading">What was the robot\'s average cycle time?</string>
     <string name="over_all_Effectiveness_heading">Rate the overall effectiveness of the robot during the match.</string>
     <string name="trained_drive_team_heading">How trained did the drive team look?</string>
+
+    <string name="over_all_placement">Rate the overall placement of cargo and hatch panels</string>
+    <string name="observ_average_speed">Average Speed</string>
+    <string name="observ_dropped_hatches">Dropped a lot of hatches</string>
+    <string name="observ_dropped_cargo">Dropped a lot of cargo</string>
+    <string name="observ_hard_time_hatches">Had a hard time placing hatches</string>
+    <string name="observ_hard_time_cargo">Had a hard time placing cargo</string>
+    <string name="hatch_pickup">How did the robot pick up hatch panels?</string>
+    <string name="cargo_pickup">How did the robot pick up cargo?</string>
+    <string name="hatch_panel_pickup_na">N/A</string>
+    <string name="hatch_panel_pickup_port">At the port</string>
+    <string name="hatch_panel_pickup_floor">Off the floor</string>
+    <string name="cargo_pickup_na">N/A</string>
+    <string name="cargo_pickup_port">At the port</string>
+    <string name="cargo_pickup_floor">Off the floor</string>
+    <string name="robotObservations">Robot Observations</string>
+    <string name="summaryHeading">In summary what did the robot do well?</string>
+    <string name="issuesHeading">List any issues the robot had.</string>
+    <string name="issues">Enter Issues here</string>
+    <string name="summary">Enter Summary Here</string>
 
     <!-- Observation strings -->
     <string name="observ_fast">Fast</string>
@@ -262,7 +283,12 @@
         <item>Lowest deck</item>
         <item>Middle deck</item>
         <item>Highest deck</item>
-        <item>Still playing on field</item>
+        <item>Highest deck, carrying 1 robot</item>
+        <item>Highest deck, carrying 2 robots</item>
+        <item>Highest deck, carried by partner</item>
+        <item>Middle deck, carrying 1 robot</item>
+        <item>Middle deck, carried by partner</item>
+        <item>Still on field</item>
     </string-array>
 
     <!-- cycle time Array -->
@@ -304,34 +330,8 @@
     <string name="cargoMiddleError">Enter Middle Cargo</string>
     <string name="cargoBottomError">Enter Bottom Cargo</string>
     <string name="scouterInitialsError">Enter Scouter Initials</string>
-
-    <!--  Delete These when done with Auton -->
-    <string name="leftStarting">left</string>
-    <string name="centerStarting">center</string>
-    <string name="rightStarting">right</string>
-    <string name="cubeInSwitchHeading">switch</string>
-    <string name="successSwitch">success</string>
-    <string name="failSwitch">fail</string>
-    <string name="wrongSideSwitch">wrong side</string>
-    <string name="notAttemptedSwitch">NA</string>
-    <string name="cubeInScaleHeading" />
-    <string name="successScale">S</string>
-    <string name="failScale">F</string>
-    <string name="wrongSideScale">W</string>
-    <string name="notAttemptedScale">NA</string>
-    <string name="robotObservations">Robot Observations</string>
-    <string name="summaryHeading">In summary what did the robot do well?</string>
-    <string name="issuesHeading">List any issues the robot had.</string>
-    <string name="issues">Enter Issues here</string>
-    <string name="summary">Enter Summary Here</string>
-    <string name="baselineCrossHeading">Baseline</string>
-    <string name="successBaseline">Success</string>
-    <string name="failBaseline">Fail</string>
-    <string name="notAttemptedBaseline">N/A</string>
-    <string name="over_all_placement">Rate the overall placement of cargo and hatch panels</string>
-    <!--  Delete These when done with Auton -->
-
-
+    <string name="hatch_panel_pickup_both">Both</string>
+    <string name="cargo_pickup_both">Both</string>
 
 
 </resources>

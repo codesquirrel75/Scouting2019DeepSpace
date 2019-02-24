@@ -1,3 +1,11 @@
+/*
+
+ ***************  Code Designed by Team 107 Team Robotics *********************
+ ***************  Edited for Team 1918 By Nate and Ken    *********************
+
+
+ */
+
 package com.example.vande.scouting2018;
 
 import android.Manifest;
@@ -52,10 +60,10 @@ import static android.os.Environment.getExternalStorageDirectory;
 
 public class SendDataActivity extends AppCompatActivity {
 
-    @BindView(R.id.matchOrPit_RadiobtnGrp)
+   // @BindView(R.id.matchOrPit_RadiobtnGrp)
     public RadioGroup matchOrPitRadiobtnGrp;
 
-    @BindView(R.id.concatFolder_editText)
+   // @BindView(R.id.concatFolder_editText)
     public EditText concatFolderEditText;
 
     @Override

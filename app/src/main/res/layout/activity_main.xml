@@ -23,6 +23,7 @@
                 android:layout_height="30pt"
                 android:onClick="showMatch"
                 android:text="@string/matchScouting"
+                android:textSize="12pt"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -32,6 +33,7 @@
                 android:layout_width="0dp"
                 android:layout_height="30pt"
                 android:onClick="showPit"
+                android:textSize="12pt"
                 android:text="@string/pitScouting"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -45,6 +47,7 @@
                 android:layout_width="0dp"
                 android:layout_height="30pt"
                 android:onClick="sendData"
+                android:textSize="12pt"
                 android:text="@string/sendData"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
