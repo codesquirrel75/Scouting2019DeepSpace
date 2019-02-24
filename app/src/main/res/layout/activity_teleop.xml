@@ -342,6 +342,96 @@
 
         </LinearLayout>
 
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:text="@string/hatch_pickup"/>
+
+        <RadioGroup
+            android:id="@+id/hatch_panel_pickup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/hatch_panel_pickup_na">
+
+            <RadioButton
+                android:id="@+id/hatch_panel_pickup_port"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hatch_panel_pickup_port"/>
+
+            <RadioButton
+                android:id="@+id/hatch_panel_pickup_floor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hatch_panel_pickup_floor"/>
+
+            <RadioButton
+                android:id="@+id/hatch_panel_pickup_both"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hatch_panel_pickup_both"/>
+
+
+            <RadioButton
+                android:id="@+id/hatch_panel_pickup_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hatch_panel_pickup_na"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:text="@string/cargo_pickup"/>
+
+        <RadioGroup
+            android:id="@+id/cargo_pickup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/cargo_pickup_na">
+
+            <RadioButton
+                android:id="@+id/cargo_pickup_port"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cargo_pickup_port"/>
+
+            <RadioButton
+                android:id="@+id/cargo_pickup_floor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cargo_pickup_floor"/>
+
+            <RadioButton
+                android:id="@+id/cargo_pickup_both"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cargo_pickup_both"/>
+
+
+            <RadioButton
+                android:id="@+id/cargo_pickup_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cargo_pickup_na"/>
+
+        </RadioGroup>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -495,7 +585,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/over_all_Effectiveness_heading"
+            android:text="@string/over_all_placement"
             android:textSize="10pt"
             android:layout_margin="10dp"/>
 
@@ -760,6 +850,64 @@
                     android:text="@string/observ_dns"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/observ_average_speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_average_speed"/>
+
+                <CheckBox
+                    android:id="@+id/observ_dropped_hatches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_dropped_hatches"/>
+
+                <CheckBox
+                    android:id="@+id/observ_dropped_cargo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_dropped_cargo"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/observ_hard_time_hatches"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_hard_time_hatches"/>
+
+                <CheckBox
+                    android:id="@+id/observ_hard_time_cargo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_hard_time_cargo"/>
+
+               <!-- <CheckBox
+                    android:id="@+id/observ_dns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="setString"
+                    android:text="@string/observ_dns"/>-->
+            </LinearLayout>
+
         </LinearLayout>
 
         <TextView
@@ -769,13 +917,15 @@
             android:textSize="10pt"
             android:text="@string/summaryHeading"/>
 
-        <EditText
-            android:autofillHints="Summary"
-            android:inputType="text"
+
+
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/summary_input"
             android:hint="@string/summary"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -783,6 +933,25 @@
             android:layout_margin="10dp"
             android:textSize="10pt"
             android:text="@string/issuesHeading"/>
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/issues_input"
+            android:hint="@string/issues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="16sp" />
+
+
+ <!--       <EditText
+            android:autofillHints="Summary"
+            android:inputType="text"
+            android:id="@+id/summary_input"
+            android:hint="@string/summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
 
         <EditText
             android:autofillHints="Issues"
@@ -792,7 +961,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-
+-->
 
         <Button
             android:id="@+id/save_btn"
