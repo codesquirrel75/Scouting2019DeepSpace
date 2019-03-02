@@ -494,7 +494,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitProgrammingLanguages.setOnKeyListener(null);
         pitStartingHabPositionSpinner.setOnKeyListener(null);
         pitGamePiecePreLoaded.setOnKeyListener(null);
-        pitEndgame.setOnKeyListener(this);
+        pitEndgame.setOnKeyListener(null);
     }
 
     @Override
