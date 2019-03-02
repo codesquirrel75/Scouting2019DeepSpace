@@ -296,10 +296,10 @@
     <string-array name="cycle_time_spinner">
 
         <item> </item>
-        <item>Less than 10 seconds</item>
+        <item>Less than 5 seconds</item>
+        <item>5 to 10 Seconds</item>
         <item>10 to 15 Seconds</item>
-        <item>15 to 20 Seconds</item>
-        <item>30+ Seconds</item>
+        <item>20 + Seconds</item>
         <item>N/A</item>
 
     </string-array>
