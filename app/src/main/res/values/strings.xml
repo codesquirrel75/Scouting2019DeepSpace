@@ -5,7 +5,7 @@
     <string name="sendData">Send Data</string>
     <string name="submitInitials">Submit</string>
 
-    <string name="mainAuthor">Ken and Nate are the best! Revised 2/3/19</string>
+    <string name="mainAuthor">Ken and Nate are the best! Revised 3/7/19</string>
 
 
 
@@ -178,6 +178,7 @@
     <string name="pitProgrammingLanguage">Programming Language</string>
     <string name="pitStartingHabPositionText">On what habitat platform do you prefer to start from?</string>
     <string name="pitPreLoadText">What game piece do you preload?</string>
+    <string name="robotPreLoadText">What game piece was preloaded?</string>
     <string name="pitHatch">Hatch panel</string>
     <string name="pitCargo">Cargo</string>
     <string name="pitNothing">Nothing</string>
@@ -204,45 +205,38 @@
     <!-- Team Numbers drop down array -->
     <string-array name="teamNumbers">
         <item>Select Team Number</item>
-        <item>503</item>
-        <item>830</item>
-        <item>1677</item>
+        <item>27</item>
+        <item>216</item>
+        <item>244</item>
+        <item>288</item>
+        <item>858</item>
         <item>1918</item>
-        <item>2054</item>
-        <item>3658</item>
-        <item>4327</item>
-        <item>4381</item>
-        <item>4408</item>
-        <item>4453</item>
+        <item>2405</item>
+        <item>2767</item>
+        <item>2771</item>
+        <item>3546</item>
+        <item>3875</item>
         <item>4482</item>
-        <item>4568</item>
-        <item>5205</item>
-        <item>5227</item>
-        <item>5256</item>
-        <item>5501</item>
-        <item>5559</item>
-        <item>5674</item>
-        <item>5676</item>
-        <item>5685</item>
-        <item>5708</item>
-        <item>5710</item>
-        <item>5926</item>
-        <item>6002</item>
-        <item>6053</item>
-        <item>6092</item>
-        <item>6102</item>
-        <item>6137</item>
-        <item>6138</item>
-        <item>6425</item>
-        <item>6556</item>
-        <item>6580</item>
-        <item>7144</item>
-        <item>7203</item>
-        <item>7209</item>
-        <item>7219</item>
-        <item>7223</item>
-        <item>7794</item>
+        <item>4855</item>
+        <item>4956</item>
+        <item>4967</item>
+        <item>5056</item>
+        <item>5161</item>
+        <item>5316</item>
+        <item>5460</item>
+        <item>5470</item>
+        <item>5675</item>
+        <item>6090</item>
+        <item>6428</item>
+        <item>6600</item>
+        <item>6627</item>
+        <item>7073</item>
+        <item>7187</item>
+        <item>7248</item>
+        <item>7256</item>
+        <item>7689</item>
         <item>7811</item>
+        <item>7814</item>
         <item>7911</item>
     </string-array>
 
