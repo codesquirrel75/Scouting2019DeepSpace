@@ -486,7 +486,8 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         if (TeamNumberInputLayout.getSelectedItem().toString().equals("Select Team Number")) {
             setSpinnerError(TeamNumberInputLayout, "Select a Team Number.");
             ViewUtils.requestFocus(TeamNumberInputLayout, this);
-        } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(matchNumberInputLayout)) || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) == 0) {
+        } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(matchNumberInputLayout)) || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) == 0 || Integer.valueOf(getTextInputLayoutString(matchNumberInputLayout)) >=150) {
+            matchNumberInput.setText("");
             matchNumberInputLayout.setError(getText(R.string.matchNumberError));
             ViewUtils.requestFocus(matchNumberInputLayout, this);
         } else {
