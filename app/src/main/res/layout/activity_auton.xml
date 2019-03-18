@@ -84,7 +84,59 @@
                 android:entries="@array/startingLocation"
                 android:spinnerMode="dropdown" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:text="@string/robotPreLoadText"/>
 
+            <RadioGroup
+                android:id="@+id/game_piece_pre_loaded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/piece_nothing">
+                <RadioButton
+                    android:id="@+id/piece_hatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitHatch" />
+                <RadioButton
+                    android:id="@+id/piece_cargo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitCargo"/>
+                <RadioButton
+                    android:id="@+id/piece_nothing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitNothing"/>
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:text="@string/movedOffHab"/>
+
+            <RadioGroup
+                android:id="@+id/moved_off_hab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/moved_off_hab_no">
+                <RadioButton
+                    android:id="@+id/moved_off_hab_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/movedOffHabYes" />
+                <RadioButton
+                    android:id="@+id/moved_off_hab_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/movedOffHabNo"/>
+
+            </RadioGroup>
 
             <TextView
             android:layout_width="match_parent"
