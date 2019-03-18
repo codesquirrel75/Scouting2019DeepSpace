@@ -5,7 +5,7 @@
     <string name="sendData">Send Data</string>
     <string name="submitInitials">Submit</string>
 
-    <string name="mainAuthor">Ken and Nate are the best! Revised 3/12/19</string>
+    <string name="mainAuthor">Ken and Nate are the best! Revised 3/18/19</string>
 
 
 
@@ -326,6 +326,9 @@
     <string name="scouterInitialsError">Enter Scouter Initials</string>
     <string name="hatch_panel_pickup_both">Both</string>
     <string name="cargo_pickup_both">Both</string>
+    <string name="movedOffHab">Moved off Hab?</string>
+    <string name="movedOffHabNo">No</string>
+    <string name="movedOffHabYes">Yes</string>
 
 
 </resources>
