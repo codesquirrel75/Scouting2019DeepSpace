@@ -65,6 +65,9 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     @BindView(R.id.game_piece_pre_loaded)
     public RadioGroup GamePiecePreLoaded;
 
+    @BindView(R.id.moved_off_hab)
+    public RadioGroup MovedOffHab;
+
 
     @BindView(R.id.play_style)
     public Spinner playStyle;
@@ -230,6 +233,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         matchNumberInput.setOnKeyListener(this);
         startingLocation.setOnKeyListener(this);
         GamePiecePreLoaded.setOnKeyListener(this);
+        MovedOffHab.setOnKeyListener(this);
         CsHpInput.setOnKeyListener(this);
         CsCInput.setOnKeyListener(this);
         RLHpInput.setOnKeyListener(this);
@@ -259,6 +263,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         matchNumberInput.setOnKeyListener(null);
         startingLocation.setOnKeyListener(null);
         GamePiecePreLoaded.setOnKeyListener(null);
+        MovedOffHab.setOnKeyListener(null);
         CsHpInput.setOnKeyListener(null);
         CsCInput.setOnKeyListener(null);
         RLHpInput.setOnKeyListener(null);
@@ -499,12 +504,14 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         }
 
         final RadioButton PreLoadRadiobtn = findViewById(GamePiecePreLoaded.getCheckedRadioButtonId());
+        final RadioButton MovedOffHabBtn = findViewById(MovedOffHab.getCheckedRadioButtonId());
 
 
         autonDataStringList.add(TeamNumberInputLayout.getSelectedItem().toString());
         autonDataStringList.add(getTextInputLayoutString(matchNumberInputLayout));
         autonDataStringList.add(startingLocation.getSelectedItem().toString());
         autonDataStringList.add(PreLoadRadiobtn.getText().toString());
+        autonDataStringList.add(MovedOffHabBtn.getText().toString());
         autonDataStringList.add(getTextInputLayoutString(CsCLayout));
         autonDataStringList.add(getTextInputLayoutString(CsHpLayout));
         autonDataStringList.add(getTextInputLayoutString(RLHpLayout));
@@ -553,6 +560,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         matchNumberInput.setText("");
         startingLocation.setSelection(0);
         GamePiecePreLoaded.check(R.id.piece_nothing);
+        MovedOffHab.check(R.id.moved_off_hab_no);
         playStyle.setSelection(0);
         CargoShipHatchPanel = 0;
         CargoShipCargo = 0;
