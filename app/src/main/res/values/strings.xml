@@ -282,11 +282,11 @@
         <item>Lowest deck</item>
         <item>Middle deck</item>
         <item>Highest deck</item>
-        <item>Highest deck, carrying 1 robot</item>
-        <item>Highest deck, carrying 2 robots</item>
-        <item>Highest deck, carried by partner</item>
-        <item>Middle deck, carrying 1 robot</item>
-        <item>Middle deck, carried by partner</item>
+        <item>Highest deck: carrying 1 robot</item>
+        <item>Highest deck: carrying 2 robots</item>
+        <item>Highest deck: carried by partner</item>
+        <item>Middle deck: carrying 1 robot</item>
+        <item>Middle deck: carried by partner</item>
         <item>Still on field</item>
     </string-array>
 
