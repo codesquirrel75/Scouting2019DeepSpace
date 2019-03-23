@@ -97,6 +97,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="10pt"
+                android:text="@string/defenseInPerimeter"/>
+
+            <RadioGroup
+                android:id="@+id/pit_defense_in_perimeter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@id/defense_in_perimeter_no">
+                <RadioButton
+                    android:id="@+id/defense_in_perimeter_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/defenseInPerimeterYes" />
+                <RadioButton
+                    android:id="@+id/defense_in_perimeter_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/defenseInPerimeterNo"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
                 android:text="@string/pitPreLoadText"/>
 
             <RadioGroup

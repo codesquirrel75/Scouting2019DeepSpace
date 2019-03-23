@@ -30,6 +30,9 @@
     <string name="teamNumberHeading">Team Number</string>
     <string name="matchNumberHeading">Match Number</string>
     <string name="startingLocationHeading">Starting Location</string>
+    <string name="movedOffHab">Moved off Hab?</string>
+    <string name="movedOffHabNo">No</string>
+    <string name="movedOffHabYes">Yes</string>
     <string-array name="startingLocation">
         <item>Low Deck</item>
         <item>Middle Deck</item>
@@ -199,7 +202,9 @@
     <string name="pitPreMatchHatch">Hatch Panel</string>
     <string name="pitPreMatchNothing">Nothing</string>
     <string name="pitOtherLabel">Other</string>
-
+    <string name="defenseInPerimeter">Is your robot able to  retract all components within its perimeter in order to play defense?</string>
+    <string name="defenseInPerimeterYes">Yes</string>
+    <string name="defenseInPerimeterNo">No</string>
 
 
     <!-- Team Numbers drop down array -->
@@ -326,9 +331,8 @@
     <string name="scouterInitialsError">Enter Scouter Initials</string>
     <string name="hatch_panel_pickup_both">Both</string>
     <string name="cargo_pickup_both">Both</string>
-    <string name="movedOffHab">Moved off Hab?</string>
-    <string name="movedOffHabNo">No</string>
-    <string name="movedOffHabYes">Yes</string>
+
+
 
 
 </resources>

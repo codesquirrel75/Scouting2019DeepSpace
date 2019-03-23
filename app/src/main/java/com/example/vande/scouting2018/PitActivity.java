@@ -83,6 +83,9 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
     @BindView(R.id.pit_starting_hab_position_spinner)
     public Spinner pitStartingHabPositionSpinner;
 
+    @BindView(R.id.pit_defense_in_perimeter)
+    public RadioGroup pitDefenseInPerimeter;
+
     @BindView(R.id.pit_game_piece_pre_loaded)
     public  RadioGroup pitGamePiecePreLoaded;
 
@@ -478,6 +481,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitRobotWeight.setOnKeyListener(this);
         pitProgrammingLanguages.setOnKeyListener(this);
         pitStartingHabPositionSpinner.setOnKeyListener(this);
+        pitDefenseInPerimeter.setOnKeyListener(this);
         pitGamePiecePreLoaded.setOnKeyListener(this);
         pitEndgame.setOnKeyListener(this);
     }
@@ -493,6 +497,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitRobotWeight.setOnKeyListener(null);
         pitProgrammingLanguages.setOnKeyListener(null);
         pitStartingHabPositionSpinner.setOnKeyListener(null);
+        pitDefenseInPerimeter.setOnKeyListener(null);
         pitGamePiecePreLoaded.setOnKeyListener(null);
         pitEndgame.setOnKeyListener(null);
     }
@@ -540,6 +545,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
 
       final RadioButton pitPreLoadRadiobtn = findViewById(pitGamePiecePreLoaded.getCheckedRadioButtonId());
       final RadioButton pitPrematchRadiobtn = findViewById(pitPrematchRadioGroup.getCheckedRadioButtonId());
+      final RadioButton pitDefenseInPerimeterbtn = findViewById(pitDefenseInPerimeter.getCheckedRadioButtonId());
 
         if(PermissionUtils.getPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             if (Environment.MEDIA_MOUNTED.equals(state)) {
@@ -552,6 +558,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
                 pitDataStringList.add(pitDriveTrainInputLayout.getSelectedItem().toString());
                 pitDataStringList.add(pitProgrammingLanguages.getSelectedItem().toString());
                 pitDataStringList.add(pitStartingHabPositionSpinner.getSelectedItem().toString());
+                pitDataStringList.add(pitDefenseInPerimeterbtn.getText().toString());
                 pitDataStringList.add(pitPreLoadRadiobtn.getText().toString());
                 pitDataStringList.add(pit15String);
                 pitDataStringList.add(pitHatchString);
@@ -677,6 +684,7 @@ public class PitActivity extends AppCompatActivity implements View.OnKeyListener
         pitDriveTrainInputLayout.setSelection(0);
         pitProgrammingLanguages.setSelection(0);
         pitStartingHabPositionSpinner.setSelection(0);
+        pitDefenseInPerimeter.check(R.id.defense_in_perimeter_no);
         pitGamePiecePreLoaded.check(R.id.piece_nothing);
         pitPrematchRadioGroup.check(R.id.pit_prematch_nothing);
         pitOtherInputLayout.setText(null);
