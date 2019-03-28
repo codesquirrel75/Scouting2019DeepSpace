@@ -5,7 +5,7 @@
     <string name="sendData">Send Data</string>
     <string name="submitInitials">Submit</string>
 
-    <string name="mainAuthor">Ken and Nate are the best! Revised 3/23/19</string>
+    <string name="mainAuthor">Ken and Nate are the best! Revised 3/28/19</string>
 
 
 
@@ -211,16 +211,21 @@
     <string-array name="teamNumbers">
         <item>Select Team Number</item>
         <item>27</item>
+        <item>67</item>
         <item>216</item>
         <item>244</item>
         <item>288</item>
         <item>858</item>
         <item>1918</item>
+        <item>2054</item>
         <item>2405</item>
         <item>2767</item>
         <item>2771</item>
+        <item>3458</item>
         <item>3546</item>
         <item>3875</item>
+        <item>4327</item>
+        <item>4362</item>
         <item>4482</item>
         <item>4855</item>
         <item>4956</item>
@@ -231,16 +236,19 @@
         <item>5460</item>
         <item>5470</item>
         <item>5675</item>
+        <item>5963</item>
         <item>6090</item>
         <item>6428</item>
         <item>6600</item>
         <item>6627</item>
         <item>7073</item>
         <item>7187</item>
+        <item>7225</item>
         <item>7248</item>
         <item>7256</item>
         <item>7689</item>
         <item>7811</item>
+        <item>7812</item>
         <item>7814</item>
         <item>7911</item>
     </string-array>
