@@ -124,7 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:checkedButton="@id/moved_off_hab_no">
+                android:checkedButton="@id/moved_off_hab_yes">
                 <RadioButton
                     android:id="@+id/moved_off_hab_yes"
                     android:layout_width="wrap_content"

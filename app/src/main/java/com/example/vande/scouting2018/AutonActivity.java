@@ -560,7 +560,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
         matchNumberInput.setText("");
         startingLocation.setSelection(0);
         GamePiecePreLoaded.check(R.id.piece_nothing);
-        MovedOffHab.check(R.id.moved_off_hab_no);
+        MovedOffHab.check(R.id.moved_off_hab_yes);
         playStyle.setSelection(0);
         CargoShipHatchPanel = 0;
         CargoShipCargo = 0;
