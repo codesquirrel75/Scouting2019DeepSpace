@@ -5,7 +5,7 @@
     <string name="sendData">Send Data</string>
     <string name="submitInitials">Submit</string>
 
-    <string name="mainAuthor">Ken and Nate are the best! Revised 3/28/19</string>
+    <string name="mainAuthor">Ken and Nate are the best! Revised 4/20/19</string>
 
 
 
@@ -210,47 +210,74 @@
     <!-- Team Numbers drop down array -->
     <string-array name="teamNumbers">
         <item>Select Team Number</item>
-        <item>27</item>
-        <item>67</item>
-        <item>216</item>
-        <item>244</item>
-        <item>288</item>
-        <item>858</item>
+        <item>16</item>
+        <item>51</item>
+        <item>88</item>
+        <item>103</item>
+        <item>125</item>
+        <item>175</item>
+        <item>190</item>
+        <item>191</item>
+        <item>217</item>
+        <item>225</item>
+        <item>236</item>
+        <item>245</item>
+        <item>250</item>
+        <item>353</item>
+        <item>365</item>
+        <item>449</item>
+        <item>503</item>
+        <item>771</item>
+        <item>772</item>
+        <item>836</item>
+        <item>868</item>
+        <item>1024</item>
+        <item>1058</item>
+        <item>1218</item>
+        <item>1317</item>
+        <item>1676</item>
+        <item>1690</item>
+        <item>1781</item>
+        <item>1792</item>
         <item>1918</item>
-        <item>2054</item>
-        <item>2405</item>
-        <item>2767</item>
+        <item>1923</item>
+        <item>2265</item>
+        <item>2337</item>
+        <item>2500</item>
+        <item>2502</item>
         <item>2771</item>
-        <item>3458</item>
-        <item>3546</item>
-        <item>3875</item>
-        <item>4327</item>
-        <item>4362</item>
-        <item>4482</item>
-        <item>4855</item>
-        <item>4956</item>
-        <item>4967</item>
-        <item>5056</item>
-        <item>5161</item>
-        <item>5316</item>
-        <item>5460</item>
-        <item>5470</item>
-        <item>5675</item>
-        <item>5963</item>
-        <item>6090</item>
-        <item>6428</item>
-        <item>6600</item>
-        <item>6627</item>
-        <item>7073</item>
-        <item>7187</item>
-        <item>7225</item>
-        <item>7248</item>
-        <item>7256</item>
-        <item>7689</item>
-        <item>7811</item>
-        <item>7812</item>
-        <item>7814</item>
-        <item>7911</item>
+        <item>2791</item>
+        <item>2830</item>
+        <item>3044</item>
+        <item>3146</item>
+        <item>3381</item>
+        <item>3542</item>
+        <item>3555</item>
+        <item>3604</item>
+        <item>3618</item>
+        <item>3624</item>
+        <item>3667</item>
+        <item>3707</item>
+        <item>3926</item>
+        <item>4143</item>
+        <item>4253</item>
+        <item>4381</item>
+        <item>4481</item>
+        <item>5084</item>
+        <item>5348</item>
+        <item>5501</item>
+        <item>5567</item>
+        <item>5811</item>
+        <item>5943</item>
+        <item>5951</item>
+        <item>6401</item>
+        <item>6806</item>
+        <item>7462</item>
+        <item>7480</item>
+        <item>7651</item>
+        <item>7673</item>
+        <item>7719</item>
+        <item>7885</item>
     </string-array>
 
 
