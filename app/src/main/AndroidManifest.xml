@@ -16,11 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScouterInitialsActivity"></activity>
-        <activity android:name=".AutonActivity"></activity>
-        <activity android:name=".TeleopActivity"></activity>
-        <activity android:name=".PitActivity"></activity>
-        <activity android:name=".SendDataActivity"></activity>
+        <activity android:name=".ScouterInitialsActivity" />
+        <activity android:name=".AutonActivity" />
+        <activity android:name=".TeleopActivity" />
+        <activity android:name=".PitActivity" />
+        <activity android:name=".SendDataActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -29,11 +29,13 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
     </application>
-
-    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
 </manifest>

@@ -8,7 +8,6 @@
     <string name="mainAuthor">Ken and Nate are the best! Revised 4/20/19</string>
 
 
-
     <!-- Send Data Strings-->
 
     <string name="concatenateMatch">Concatenate Match</string>
@@ -19,12 +18,12 @@
     <string name="sendRobotPhotosText">Send Robot Photos</string>
     <string name="sendPitData">Send Pit Data</string>
     <string name="sendMatchData">Send Match Data</string>
-    
+
     <!-- Button Strings -->
 
     <string name="minus">-</string>
     <string name="plus">+</string>
-    
+
     <!--Auton Strings-->
 
     <string name="teamNumberHeading">Team Number</string>
@@ -33,22 +32,10 @@
     <string name="movedOffHab">Moved off Hab?</string>
     <string name="movedOffHabNo">No</string>
     <string name="movedOffHabYes">Yes</string>
-    <string-array name="startingLocation">
-        <item>Low Deck</item>
-        <item>Middle Deck</item>
-
-    </string-array>
-
     <string name="playStyleHeading">How did the team play during SandStorm?</string>
 
-    <string-array name="playStyle">
-        <item> </item>
-        <item>Autonomous</item>
-        <item>Driver-Operated</item>
-        <item>Didn\'t Move</item>
-
-    </string-array>
     <string name="HintA">Cargo Ship: Hatch Panel</string>
+
     <string name="HintB">Cargo Ship: Cargo</string>
     <string name="HintC">Rocket: Lower Level Hatch Panel</string>
     <string name="HintD">Rocket: Lower Level Cargo</string>
@@ -56,20 +43,20 @@
     <string name="HintF">Rocket: Middle Level Cargo</string>
     <string name="HintG">Rocket: Upper Level Hatch Panel</string>
     <string name="HintH">Rocket: Upper Level Cargo</string>
-
     <string name="saveButton">Save</string>
+    <string name="teamNumberError">Enter in team number</string>
+
+    <string name="matchNumberError">Enter in match number</string>
 
 
     <!--Auton Error Strings-->
 
-    <string name="teamNumberError">Enter in team number</string>
-    <string name="matchNumberError">Enter in match number</string>
     <string name="startingLocationError">Enter starting location</string>
+    <string name="cargoShipTitle">Cargo Ship</string>
+    <string name="rocketShipTitle">Rocket Ship</string>
 
     <!--Teleop Strings-->
 
-    <string name="cargoShipTitle">Cargo Ship</string>
-    <string name="rocketShipTitle">Rocket Ship</string>
     <string name="hatchPanelsOnCargoShip">Hatch Panels on Cargo Ship</string>
     <string name="cargoInCargoShip">Cargo in Cargo Ship</string>
     <string name="hatchPanelTop">Hatch Panel Top</string>
@@ -78,15 +65,15 @@
     <string name="cargoTop">Cargo Top</string>
     <string name="cargoMiddle">Cargo Middle</string>
     <string name="cargoBottom">Cargo Bottom</string>
-    <string name="defenseQuestion">How effective was the robot\'s defense?</string>
     <string name="endgameHeading">Where was the robot at end game?</string>
     <string name="generalInfoHeading">General Info</string>
+
     <string name="cycle_time_heading">What was the robot\'s average cycle time?</string>
     <string name="over_all_Effectiveness_heading">Rate the overall effectiveness of the robot during the match.</string>
     <string name="trained_drive_team_heading">How trained did the drive team look?</string>
-
     <string name="over_all_placement">Rate the overall placement of cargo and hatch panels</string>
     <string name="observ_average_speed">Average Speed</string>
+
     <string name="observ_dropped_hatches">Dropped a lot of hatches</string>
     <string name="observ_dropped_cargo">Dropped a lot of cargo</string>
     <string name="observ_hard_time_hatches">Had a hard time placing hatches</string>
@@ -104,10 +91,10 @@
     <string name="issuesHeading">List any issues the robot had.</string>
     <string name="issues">Enter Issues here</string>
     <string name="summary">Enter Summary Here</string>
-
-    <!-- Observation strings -->
     <string name="observ_fast">Fast</string>
     <string name="observ_slow">Slow</string>
+
+    <!-- Observation strings -->
     <string name="observ_jerky">Jerky</string>
     <string name="observ_smooth">Smooth</string>
     <string name="observ_fell_over">Fell Over</string>
@@ -121,19 +108,37 @@
     <string name="observ_cargo_pickup">Had hard time picking up cargo</string>
     <string name="observ_slowed_by_robot">Had defense played against them</string>
     <string name="observ_dns">Didn\'t show up</string>
+    <string name="defenseQuestion">How effective was the robot\'s defense?</string>
+    <string name="counterDefenseQuestion">How effective was the robot\'s counter defense?</string>
 
 
-    
+    <!--    Defense / Counter Defense strings -->
+    <string name="defendedQuestion">How effective was the robot while being defended?</string>
+    <string name="defense_shut_down">Shut Down</string>
+    <string name="defense_slow_down">Slowed Down</string>
 
-   
-
+    <string name="defense_not_effective">Not Effective</string>
+    <string name="defense_not_effected">Not Effected</string>
+    <string name="type_of_bot">Type of Bot</string>
     <string name="climbingHeading">Climb</string>
+
+
+    <!--  Type of Bot Strings -->
+
     <string name="successClimb">Success</string>
+
     <string name="failClimb">Fail</string>
+
+
     <string name="noClimb">N/A</string>
-
     <string name="climbTimeHeading">Climb Time</string>
+    <string name="climb_fast">0 - 10 seconds</string>
+    <string name="climb_medium">11 - 19 seconds</string>
 
+    <!--  Climb strings  -->
+
+    <string name="climb_slow">20 + seconds</string>
+    <string name="climb_na">N/A</string>
     <string name="abilityToHelpClimbHeading">Can help others climb</string>
     <string name="ableToHelpClimb">Yes</string>
     <string name="unableToHelpClimb">No</string>
@@ -141,23 +146,24 @@
     <string name="onPlatformHeading">On platform</string>
     <string name="isOnPlatform">Success</string>
     <string name="isNotOnPlatform">Fail</string>
-    <string name="notAttemptedPlatform">N/A</string>
 
+    <string name="notAttemptedPlatform">N/A</string>
     <string name="defenseHeading">Defense</string>
     <string name="effectiveDefense">Effective</string>
     <string name="ineffectiveDefense">Ineffective</string>
+
     <string name="receivedFoulsDefense">Fouled</string>
     <string name="noDefense">N/A</string>
-
     <string name="fouls">Fouls</string>
     <string name="nextButton">Move To Teleop</string>
-
     <string name="scouterInitials">Scouter Initials</string>
 
-    <!-- Rating Scale -->
     <string name="rating_0">0</string>
     <string name="rating_1">1</string>
+
     <string name="rating_2">2</string>
+
+    <!-- Rating Scale -->
     <string name="rating_3">3</string>
     <string name="rating_4">4</string>
     <string name="rating_5">5</string>
@@ -167,17 +173,16 @@
     <string name="rating_9">9</string>
     <string name="rating_10">10</string>
     <string name="rating_na">N/A</string>
-
+    <string name="matchScouting">Match</string>
+    <string name="pitScouting">Pit</string>
+    <string name="pitTeamNumberHeading">Team Number</string>
 
 
     <!--Menu Strings-->
-    <string name="matchScouting">Match</string>
-    <string name="pitScouting">Pit</string>
-
-    <!--Pit Scouting Strings-->
-    <string name="pitTeamNumberHeading">Team Number</string>
     <string name="pitRobotWeightHint">Robot Weight</string>
     <string name="pitDriveTrain">Drive Train</string>
+
+    <!--Pit Scouting Strings-->
     <string name="pitProgrammingLanguage">Programming Language</string>
     <string name="pitStartingHabPositionText">On what habitat platform do you prefer to start from?</string>
     <string name="pitPreLoadText">What game piece do you preload?</string>
@@ -205,9 +210,80 @@
     <string name="defenseInPerimeter">Is your robot able to  retract all components within its perimeter in order to play defense?</string>
     <string name="defenseInPerimeterYes">Yes</string>
     <string name="defenseInPerimeterNo">No</string>
+    <string name="cycleSuperFast">Under 5 seconds</string>
+    <string name="cycleFast">5 to 10 Seconds</string>
+    <string name="cycleMedium">10 to 15 Seconds</string>
 
 
     <!-- Team Numbers drop down array -->
+    <string name="cycleSlow">20 + Seconds</string>
+
+
+    <!-- Programming drop down array -->
+    <string name="cycleNa">N/A</string>
+
+    <!-- Drive Train drop down array -->
+    <string name="pitJava">Java</string>
+
+    <!-- Hab Platform drop down array -->
+    <string name="pitCpp">C++</string>
+
+    <string name="pitLabview">LabVIEW</string>
+
+    <string name="pitOther">Other</string>
+
+    <!-- cycle time Array -->
+
+    <string name="pitRobotWeightTextView">How much does your robot weigh?</string>
+
+    <string name="pitRobotArcadeGame">What old arcade game would your robot be in?</string>
+    <string name="savePitButton">Save</string>
+    <string name="takePhotoButton">Take Photo</string>
+    <string name="pitTeamNumberError">Select a team number</string>
+    <string name="pitProgrammingLanguageError">Enter Programming Language</string>
+
+    <string name="robotNameError">Enter Robot Name</string>
+    <string name="pitRobotWeightError">Enter Robot Weight</string>
+    <string name="teleopCargoShipHatchPanelError">Enter Cargo Ship Hatch Panels</string>
+    <string name="teleopCargoInCargoShipError">Enter Cargo Ship Cargo</string>
+    <string name="hatchPanelTopError">Enter Top HatchPanels</string>
+    <string name="hatchPanelMiddleError">Enter Middle Hatch Panels</string>
+    <string name="hatchPanelBottomError">Enter Bottom Hatch Panels</string>
+
+    <string name="cargoTopError">Enter Top Cargo</string>
+
+    <!-- Pit Error Strings -->
+    <string name="cargoMiddleError">Enter Middle Cargo</string>
+    <string name="cargoBottomError">Enter Bottom Cargo</string>
+    <string name="scouterInitialsError">Enter Scouter Initials</string>
+    <string name="hatch_panel_pickup_both">Both</string>
+
+    <!--  Teleop Error Strings -->
+    <string name="cargo_pickup_both">Both</string>
+    <string name="editTeams">Import TEAMS</string>
+    <string-array name="startingLocation">
+        <item>Low Deck</item>
+        <item>Middle Deck</item>
+
+    </string-array>
+    <string-array name="playStyle">
+        <item> </item>
+        <item>Autonomous</item>
+        <item>Driver-Operated</item>
+        <item>Didn\'t Move</item>
+
+    </string-array>
+    <string-array name="bot_type_array">
+        <item></item>
+        <item>Offense great scorer (10+ elements)</item>
+        <item>Offense medium scorer (6-9 elements)</item>
+        <item>Offense low scorer (5 or less elements)</item>
+        <item>Defense (go to other side of field)</item>
+        <item>Counter defense (protect own alliance)</item>
+        <item>Utility (play some offense, some defense)</item>
+        <item>Missing or died</item>
+
+    </string-array>
     <string-array name="teamNumbers">
         <item>Select Team Number</item>
         <item>16</item>
@@ -279,9 +355,6 @@
         <item>7719</item>
         <item>7885</item>
     </string-array>
-
-
-    <!-- Programming drop down array -->
     <string-array name="programmingLanguages">
         <item>LabView</item>
         <item>C++</item>
@@ -289,8 +362,6 @@
         <item>Python</item>
         <item>Other</item>
     </string-array>
-
-    <!-- Drive Train drop down array -->
     <string-array name="driveTrain">
         <item>Tank</item>
         <item>Mechanum</item>
@@ -298,20 +369,16 @@
         <item>Arcade</item>
         <item>Other</item>
     </string-array>
-
-    <!-- Hab Platform drop down array -->
     <string-array name="habPlatform">
         <item>Lowest deck</item>
         <item>Middle deck</item>
         <item>Highest deck</item>
     </string-array>
-
     <string-array name="endgame">
         <item>Cargo</item>
         <item>Hatch Panel</item>
         <item>Nothing</item>
     </string-array>
-
     <string-array name="endgame_location">
         <item> </item>
         <item>Lowest deck</item>
@@ -324,9 +391,6 @@
         <item>Middle deck: carried by partner</item>
         <item>Still on field</item>
     </string-array>
-
-    <!-- cycle time Array -->
-
     <string-array name="cycle_time_spinner">
 
         <item> </item>
@@ -337,37 +401,6 @@
         <item>N/A</item>
 
     </string-array>
-
-    <string name="pitJava">Java</string>
-    <string name="pitCpp">C++</string>
-    <string name="pitLabview">LabVIEW</string>
-    <string name="pitOther">Other</string>
-    <string name="pitRobotWeightTextView">How much does your robot weigh?</string>
-    <string name="pitRobotArcadeGame">What old arcade game would your robot be in?</string>
-    <string name="savePitButton">Save</string>
-
-    <string name="takePhotoButton">Take Photo</string>
-
-    <!-- Pit Error Strings -->
-    <string name="pitTeamNumberError">Select a team number</string>
-    <string name="pitProgrammingLanguageError">Enter Programming Language</string>
-    <string name="robotNameError">Enter Robot Name</string>
-    <string name="pitRobotWeightError">Enter Robot Weight</string>
-
-    <!--  Teleop Error Strings -->
-    <string name="teleopCargoShipHatchPanelError">Enter Cargo Ship Hatch Panels</string>
-    <string name="teleopCargoInCargoShipError">Enter Cargo Ship Cargo</string>
-    <string name="hatchPanelTopError">Enter Top HatchPanels</string>
-    <string name="hatchPanelMiddleError">Enter Middle Hatch Panels</string>
-    <string name="hatchPanelBottomError">Enter Bottom Hatch Panels</string>
-    <string name="cargoTopError">Enter Top Cargo</string>
-    <string name="cargoMiddleError">Enter Middle Cargo</string>
-    <string name="cargoBottomError">Enter Bottom Cargo</string>
-    <string name="scouterInitialsError">Enter Scouter Initials</string>
-    <string name="hatch_panel_pickup_both">Both</string>
-    <string name="cargo_pickup_both">Both</string>
-
-
 
 
 </resources>

@@ -436,6 +436,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"
+            android:text="@string/defendedQuestion"/>
+
+        <RadioGroup
+            android:id="@+id/defended_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/defended_na">
+
+            <RadioButton
+                android:id="@+id/defense_down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/defense_shut_down"/>
+
+            <RadioButton
+                android:id="@+id/defense_slowed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/defense_slow_down"/>
+
+            <RadioButton
+                android:id="@+id/defense_none"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/defense_not_effected"/>
+
+            <RadioButton
+                android:id="@+id/defended_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_na"/>
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
             android:text="@string/defenseQuestion"/>
 
         <RadioGroup
@@ -450,38 +494,67 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/rating_1"/>
+                android:text="@string/defense_shut_down"/>
 
             <RadioButton
                 android:id="@+id/defense_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/rating_2"/>
+                android:text="@string/defense_slow_down"/>
 
             <RadioButton
                 android:id="@+id/defense_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/rating_3"/>
-
-            <RadioButton
-                android:id="@+id/defense_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_4"/>
-
-            <RadioButton
-                android:id="@+id/defense_5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/rating_5"/>
+                android:text="@string/defense_not_effective"/>
 
             <RadioButton
                 android:id="@+id/defense_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating_na"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:text="@string/counterDefenseQuestion"/>
+
+        <RadioGroup
+            android:id="@+id/counter_defense_effectiveness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/counter_defense_na">
+
+            <RadioButton
+                android:id="@+id/counter_defense_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/defense_shut_down"/>
+
+            <RadioButton
+                android:id="@+id/counter_defense_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/defense_slow_down"/>
+
+            <RadioButton
+                android:id="@+id/counter_defense_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/defense_not_effective"/>
+
+            <RadioButton
+                android:id="@+id/counter_defense_na"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -513,16 +586,99 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/climbTimeHeading"
+            android:textSize="10pt"
+            android:layout_margin="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/climb_time_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/climb_na">
+
+            <RadioButton
+                android:id="@+id/climb_fast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/climb_fast"/>
+            <RadioButton
+                android:id="@+id/climb_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/climb_medium"/>
+            <RadioButton
+                android:id="@+id/climb_slow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/climb_slow"/>
+            <RadioButton
+                android:id="@+id/climb_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/climb_na"/>
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/cycle_time_heading"
             android:textSize="10pt"
             android:layout_margin="10dp"/>
 
-        <Spinner
+       <!-- <Spinner
             android:id="@+id/cycle_time_spinner"
             android:layout_width="match_parent"
             android:layout_height="30dp">
 
-        </Spinner>
+        </Spinner> -->
+
+        <RadioGroup
+            android:id="@+id/cycle_time_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@id/cycle_na">
+
+            <RadioButton
+                android:id="@+id/cycle_super_fast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cycleSuperFast"/>
+            <RadioButton
+                android:id="@+id/cycle_fast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cycleFast"/>
+            <RadioButton
+                android:id="@+id/cycle_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cycleMedium"/>
+            <RadioButton
+                android:id="@+id/cycle_slow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cycleSlow"/>
+            <RadioButton
+                android:id="@+id/cycle_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cycleNa"/>
+
+
+        </RadioGroup>
 
         <TextView
             android:layout_width="match_parent"
@@ -909,6 +1065,19 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="10pt"
+            android:text="@string/type_of_bot"/>
+
+        <Spinner
+            android:id="@+id/type_of_bot_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+        </Spinner>
 
         <TextView
             android:layout_width="match_parent"

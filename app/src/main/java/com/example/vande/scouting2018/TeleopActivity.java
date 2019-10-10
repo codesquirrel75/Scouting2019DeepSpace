@@ -110,14 +110,26 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
     @BindView(R.id.cargo_pickup)
     public RadioGroup CargoPickup;
 
+    @BindView(R.id.defended_radio_group)
+    public RadioGroup defendedRadioGroup;
+
     @BindView(R.id.defense_effectiveness)
     public RadioGroup defenseEffectiveness;
+
+    @BindView(R.id.counter_defense_effectiveness)
+    public RadioGroup counterDefenseEffectiveness;
 
     @BindView(R.id.end_game_location_spinner)
     public Spinner endGameLocationSpinner;
 
-    @BindView(R.id.cycle_time_spinner)
-    public Spinner cycleTimeSpinner;
+    @BindView(R.id.climb_time_radio_group)
+    public RadioGroup climbTimeRadioGroup;
+
+  //  @BindView(R.id.cycle_time_spinner)
+  //  public Spinner cycleTimeSpinner;
+
+    @BindView(R.id.cycle_time_radio_group)
+    public RadioGroup cycleTimeRadioGroup;
 
     @BindView(R.id.overall_effectiveness_radio_group)
     public RadioGroup overallEffectivenessRadioGoup;
@@ -187,6 +199,9 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
     @BindView(R.id.observ_hard_time_cargo)
     public  CheckBox observHardTimeCargo;
+
+    @BindView(R.id.type_of_bot_spinner)
+    public Spinner typeOfBotSpinner;
 
     @BindView(R.id.summary_input)
     public EditText summaryInput;
@@ -262,7 +277,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
 
         //  --- Cycle Time spinner ---
 
-        Spinner cycletimespinner = (Spinner) findViewById(R.id.cycle_time_spinner);
+/*        Spinner cycletimespinner = (Spinner) findViewById(R.id.cycle_time_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> cycletimeadapter = ArrayAdapter.createFromResource(this,
                 R.array.cycle_time_spinner, android.R.layout.simple_spinner_item);
@@ -270,6 +285,17 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         cycletimeadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         cycletimespinner.setAdapter(cycletimeadapter);
+*/
+        //    ---  Type of Bot Spinner  ---
+
+        Spinner typeofbotspinner = (Spinner) findViewById(R.id.type_of_bot_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> typeofbotadapter = ArrayAdapter.createFromResource(this,
+                R.array.bot_type_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        typeofbotadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        typeofbotspinner.setAdapter(typeofbotadapter);
 
     }
 
@@ -289,9 +315,13 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopCargoTopInput.setOnKeyListener(this);
         teleopCargoTopInput.setOnKeyListener(this);
         teleopCargoTopInput.setOnKeyListener(this);
+        defendedRadioGroup.setOnKeyListener(this);
         defenseEffectiveness.setOnKeyListener(this);
+        counterDefenseEffectiveness.setOnKeyListener(this);
         endGameLocationSpinner.setOnKeyListener(this);
-        cycleTimeSpinner.setOnKeyListener(this);
+        climbTimeRadioGroup.setOnKeyListener(this);
+  //      cycleTimeSpinner.setOnKeyListener(this);
+        cycleTimeRadioGroup.setOnKeyListener(this);
         overallEffectivenessRadioGoup.setOnKeyListener(this);
         HatchPanelPickup.setOnKeyListener(this);
         CargoPickup.setOnKeyListener(this);
@@ -317,6 +347,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observDroppedCargo.setOnKeyListener(this);
         observHardTimeHatches.setOnKeyListener(this);
         observHardTimeCargo.setOnKeyListener(this);
+        typeOfBotSpinner.setOnKeyListener(this);
         summaryInput.setOnKeyListener(this);
         issuesInput.setOnKeyListener(this);
 
@@ -335,9 +366,13 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopCargoTopInput.setOnKeyListener(null);
         teleopCargoTopInput.setOnKeyListener(null);
         teleopCargoTopInput.setOnKeyListener(null);
+        defendedRadioGroup.setOnKeyListener(null);
         defenseEffectiveness.setOnKeyListener(null);
+        counterDefenseEffectiveness.setOnKeyListener(null);
         endGameLocationSpinner.setOnKeyListener(null);
-        cycleTimeSpinner.setOnKeyListener(null);
+        climbTimeRadioGroup.setOnKeyListener(null);
+    //    cycleTimeSpinner.setOnKeyListener(null);
+        cycleTimeRadioGroup.setOnKeyListener(null);
         overallEffectivenessRadioGoup.setOnKeyListener(null);
         HatchPanelPickup.setOnKeyListener(null);
         CargoPickup.setOnKeyListener(null);
@@ -363,6 +398,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observDroppedCargo.setOnKeyListener(null);
         observHardTimeHatches.setOnKeyListener(null);
         observHardTimeCargo.setOnKeyListener(null);
+        typeOfBotSpinner.setOnKeyListener(null);
         summaryInput.setOnKeyListener(null);
         issuesInput.setOnKeyListener(null);
 
@@ -957,6 +993,10 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         } else if (StringUtils.isEmptyOrNull(getTextInputLayoutString(teleopCargoBottomInputLayout))) {
             teleopCargoBottomInputLayout.setError(getText(R.string.cargoBottomError));
             ViewUtils.requestFocus(teleopCargoBottomInputLayout, this);
+        } else if(typeOfBotSpinner.getSelectedItem().toString( ).equals("")){
+
+            setSpinnerError(typeOfBotSpinner,"Select bot type");
+            ViewUtils.requestFocus(typeOfBotSpinner, this);
 
         } else {
             allInputsPassed = true;
@@ -966,11 +1006,15 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         }
 
         final RadioButton defenseEffectivenessRadiobtn = findViewById(defenseEffectiveness.getCheckedRadioButtonId());
+        final RadioButton counterDefenseEffectivenessRadiobtn = findViewById(counterDefenseEffectiveness.getCheckedRadioButtonId());
         final RadioButton overallEffectivenessRadiobtn = findViewById(overallEffectivenessRadioGoup.getCheckedRadioButtonId());
         final RadioButton overallPlacementRadiobtn = findViewById(overallPlacementRadioGoup.getCheckedRadioButtonId());
         final RadioButton trainedDriveTeamRadiobtn = findViewById(trainedDriveTeamRadioGoup.getCheckedRadioButtonId());
         final RadioButton HatchPanelPickupRadiobtn = findViewById(HatchPanelPickup.getCheckedRadioButtonId());
         final RadioButton CargoPickupRadiobtn = findViewById(CargoPickup.getCheckedRadioButtonId());
+        final RadioButton climbTimeRadiobtn = findViewById(climbTimeRadioGroup.getCheckedRadioButtonId());
+        final RadioButton cycleTimeRadiobtn = findViewById(cycleTimeRadioGroup.getCheckedRadioButtonId());
+        final RadioButton defendedRadiobtn = findViewById(defendedRadioGroup.getCheckedRadioButtonId());
 
 
         if(PermissionUtils.getPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
@@ -990,13 +1034,18 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
                 teleopDataStringList.add(getTextInputLayoutString(teleopCargoBottomInputLayout));
                 teleopDataStringList.add(HatchPanelPickupRadiobtn.getText().toString());
                 teleopDataStringList.add(CargoPickupRadiobtn.getText().toString());
+                teleopDataStringList.add(defendedRadiobtn.getText().toString());
                 teleopDataStringList.add(defenseEffectivenessRadiobtn.getText().toString());
+                teleopDataStringList.add(counterDefenseEffectivenessRadiobtn.getText().toString());
                 teleopDataStringList.add(endGameLocationSpinner.getSelectedItem().toString());
-                teleopDataStringList.add(cycleTimeSpinner.getSelectedItem().toString());
+                teleopDataStringList.add(climbTimeRadiobtn.getText().toString());
+               // teleopDataStringList.add(cycleTimeSpinner.getSelectedItem().toString());
+                teleopDataStringList.add(cycleTimeRadiobtn.getText().toString());
                 teleopDataStringList.add(overallEffectivenessRadiobtn.getText().toString());
                 teleopDataStringList.add(overallPlacementRadiobtn.getText().toString());
                 teleopDataStringList.add(trainedDriveTeamRadiobtn.getText().toString());
                 teleopDataStringList.add(observations);
+                teleopDataStringList.add(typeOfBotSpinner.getSelectedItem().toString());
                 teleopDataStringList.add(summaryInput.getText().toString());
                 teleopDataStringList.add(issuesInput.getText().toString());
 
@@ -1048,9 +1097,13 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         teleopCargoTopInput.setText("" + teleopCargotop);
         teleopCargoMiddleInput.setText("" + teleopCargoMiddle);
         teleopCargoBottomInput.setText("" + teleopCargoBottom);
+        defendedRadioGroup.clearCheck();
         defenseEffectiveness.clearCheck();
+        counterDefenseEffectiveness.clearCheck();
         endGameLocationSpinner.setSelection(0);
-        cycleTimeSpinner.setSelection(0);
+        climbTimeRadioGroup.clearCheck();
+        //cycleTimeSpinner.setSelection(0);
+        cycleTimeRadioGroup.clearCheck();
         HatchPanelPickup.clearCheck();
         CargoPickup.clearCheck();
         overallEffectivenessRadioGoup.clearCheck();
@@ -1076,6 +1129,7 @@ public class TeleopActivity extends AppCompatActivity implements View.OnKeyListe
         observDroppedCargo.setChecked(false);
         observHardTimeHatches.setChecked(false);
         observHardTimeCargo.setChecked(false);
+        typeOfBotSpinner.setSelection(0);
         summaryInput.setText(null);
         issuesInput.setText(null);
 

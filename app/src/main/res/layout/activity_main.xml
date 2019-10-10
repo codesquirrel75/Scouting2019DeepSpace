@@ -56,6 +56,52 @@
                 app:layout_constraintTop_toBottomOf="@id/pit_button"
                 app:layout_constraintVertical_bias="0.0" />
 
+            <Button
+                android:id="@+id/edit_teams_button"
+                android:layout_width="0dp"
+                android:layout_height="30pt"
+                android:onClick="getTeams"
+                android:text="@string/editTeams"
+                android:textSize="12pt"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/send_data_button" />
+
+            <TextView
+                android:id="@+id/TeamsLable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16pt"
+                android:text="Loaded Teams"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/edit_teams_button"
+                />
+
+            <ScrollView
+                android:id="@+id/TeamsScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                app:layout_constraintTop_toBottomOf="@id/TeamsLable"
+                app:layout_constraintBottom_toTopOf="@id/textView"
+                android:fillViewport="false"
+                android:scrollbars="vertical">
+
+
+                <TextView
+                    android:id="@+id/TeamsList"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text = "No teams loaded"
+                    android:textColor = "@color/colorAccent"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    />
+
+            </ScrollView>
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"

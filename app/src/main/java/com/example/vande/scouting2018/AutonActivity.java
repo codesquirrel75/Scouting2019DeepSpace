@@ -11,6 +11,7 @@ package com.example.vande.scouting2018;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -31,6 +32,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.vande.scouting2018.data.TeamsDbHelper;
 
 import java.util.ArrayList;
 
@@ -180,6 +183,7 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     int CargoMiddle = 0;
     int CargoBottom = 0;
 
+    public ArrayList<String> team_numbers = new ArrayList<>();
     private ArrayList<CharSequence> autonDataStringList;
     public static final int REQUEST_CODE = 1;
 
@@ -192,9 +196,13 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        TeamsDbHelper mDbHelper = new TeamsDbHelper(this);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
         setContentView(R.layout.activity_auton);
         ButterKnife.bind(this);
         autonDataStringList = new ArrayList<>();
+        team_numbers = TeamsDbHelper.getTeamNumbers(db);
 
         checkForPermissions();
 
@@ -211,12 +219,13 @@ public class AutonActivity extends AppCompatActivity implements View.OnKeyListen
 
         Spinner teamnumberspinner = (Spinner) findViewById(R.id.team_number_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> teamnumberadapter = ArrayAdapter.createFromResource(this,
-                R.array.teamNumbers, android.R.layout.simple_spinner_item);
+        ArrayAdapter teamnumberadapter = new ArrayAdapter<String>(AutonActivity.this,
+                android.R.layout.simple_spinner_dropdown_item, team_numbers);
 // Specify the layout to use when the list of choices appears
         teamnumberadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         teamnumberspinner.setAdapter(teamnumberadapter);
+
 
     }
 
