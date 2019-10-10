@@ -7,7 +7,7 @@ public class Settings {
     public static final class SettingsEntry {
 
         //  constant variable with Table Name
-        public static final String TEAMS_URL = "";
+        public static final String TEAMS_URL = "{GOOGLE SHEETS URL GOES HERE}";
 
     }
 
